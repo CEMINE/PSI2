@@ -71,7 +71,7 @@
             txtUsername.Location = new Point(121, 98);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(184, 23);
-            txtUsername.TabIndex = 2;
+            txtUsername.TabIndex = 1;
             // 
             // txtPassword
             // 
@@ -96,7 +96,7 @@
             btnExit.Location = new Point(230, 241);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(75, 23);
-            btnExit.TabIndex = 3;
+            btnExit.TabIndex = 4;
             btnExit.Text = "Iesire";
             btnExit.UseVisualStyleBackColor = true;
             // 
@@ -113,7 +113,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Autentificare";
             ResumeLayout(false);
             PerformLayout();
         }

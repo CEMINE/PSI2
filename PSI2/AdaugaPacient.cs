@@ -20,6 +20,7 @@ namespace PSI2
         {
             InitializeComponent();
         }
+
         char? sex;
         PatientServices _patientServices = new PatientServices();
         string nume, prenume, telefon, adresa, cnp, serie, numar, cetatenie, stareCivila;
@@ -27,13 +28,8 @@ namespace PSI2
 
         public static bool IsValidEmail(string email)
         {
-            // Regular expression pattern for email validation
             string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-
-            // Create a Regex object with the pattern
             Regex regex = new Regex(pattern);
-
-            // Use the IsMatch method to validate the email string
             return regex.IsMatch(email);
         }
 

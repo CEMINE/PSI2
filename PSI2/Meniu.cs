@@ -25,7 +25,12 @@ namespace PSI2
         private void Meniu_Load(object sender, EventArgs e)
         {
             patientList = _patientServices.GetAllPatients();
-            listBox1.DataSource = patientList;
+            List<string> listaNumePacienti = new List<string>();
+            foreach(var item in patientList)
+            {
+                listaNumePacienti.Add(item.LastName + " " + item.FirstName);
+            }
+            listBox1.DataSource = listaNumePacienti;
         }
 
         private void btnAdaugaPacient_Click(object sender, EventArgs e)
