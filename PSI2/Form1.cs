@@ -1,0 +1,74 @@
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+using System.Windows.Forms;
+using BCrypt.Net;
+using System.Diagnostics;
+using PSI2.Models;
+using PSI2.Services;
+
+namespace PSI2
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+            var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
+            var connectionString = ConfigurationManager.ConnectionStrings["PSI"].ConnectionString;
+            optionsBuilder.UseSqlServer(connectionString);
+            _context = new AppDbContext(optionsBuilder.Options);
+        }
+
+        //string connectionString = "Server=DESKTOP-0QEIVV4\\CC;Database=PSI;User Id=admin;Password=admin;TrustServerCertificate=True;Integrated Security=False;";
+        string username;
+        string password;
+        IEnumerable<DoctorModel> doctorList;
+        DoctorServices _doctorServices = new DoctorServices();
+        private AppDbContext _context;
+
+        private void InitializeDbContext()
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if(!String.IsNullOrEmpty(txtUsername.Text) && !String.IsNullOrEmpty(txtPassword.Text))
+            {
+                username = txtUsername.Text;
+                password = txtPassword.Text;
+                string passwordHash = BCrypt.Net.BCrypt.EnhancedHashPassword(password);
+                var user = _context.Doctor.SingleOrDefault(u => u.Username == username);
+                if (user == null)
+                {
+                    MessageBox.Show("Numele de utilizator sau parola sunt gresite!");
+                    return; 
+                }
+                doctorList = _doctorServices.GetAllDoctors();
+                if(BCrypt.Net.BCrypt.EnhancedVerify(password, user.Password))
+                {
+                    Debug.WriteLine($"e bun");
+                    this.Hide();
+                    Meniu m = new Meniu();
+                    m.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Numele de utilizator sau parola sunt gresite!");
+                }
+                foreach(var item in doctorList)
+                {
+                    Debug.WriteLine($"{item.FirstName}");
+                }
+                Debug.WriteLine($"{BCrypt.Net.BCrypt.EnhancedHashPassword(password)} {user.Password}");
+            }
+            else
+            {
+                MessageBox.Show("Completeaza numele si parola!");
+            }
+
+        }
+
+
+    }
+}
