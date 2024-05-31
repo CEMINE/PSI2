@@ -28,22 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox1 = new ListBox();
             btnAdaugaPacient = new Button();
+            listBox1 = new ListBox();
+            txtCautare = new TextBox();
+            label2 = new Label();
             SuspendLayout();
-            // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(31, 45);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(293, 124);
-            listBox1.TabIndex = 0;
             // 
             // btnAdaugaPacient
             // 
-            btnAdaugaPacient.Location = new Point(362, 45);
+            btnAdaugaPacient.Location = new Point(576, 10);
             btnAdaugaPacient.Name = "btnAdaugaPacient";
             btnAdaugaPacient.Size = new Size(114, 23);
             btnAdaugaPacient.TabIndex = 1;
@@ -51,22 +44,53 @@
             btnAdaugaPacient.UseVisualStyleBackColor = true;
             btnAdaugaPacient.Click += btnAdaugaPacient_Click;
             // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(9, 66);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(306, 244);
+            listBox1.TabIndex = 7;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            // 
+            // txtCautare
+            // 
+            txtCautare.Location = new Point(9, 39);
+            txtCautare.Name = "txtCautare";
+            txtCautare.Size = new Size(306, 23);
+            txtCautare.TabIndex = 8;
+            txtCautare.TextChanged += txtCautare_TextChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 14);
+            label2.Name = "label2";
+            label2.Size = new Size(203, 15);
+            label2.TabIndex = 9;
+            label2.Text = "Cauta pacient dupa numele complet:";
+            // 
             // Meniu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnAdaugaPacient);
+            Controls.Add(label2);
+            Controls.Add(txtCautare);
             Controls.Add(listBox1);
+            Controls.Add(btnAdaugaPacient);
             Name = "Meniu";
             Text = "Meniu";
             Load += Meniu_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private ListBox listBox1;
         private Button btnAdaugaPacient;
+        private ListBox listBox1;
+        private TextBox txtCautare;
+        private Label label2;
     }
 }
