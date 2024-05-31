@@ -33,8 +33,9 @@ namespace PSI2.Services
             {
                 using (var context = new AppDbContext(_contextOptions))
                 {
-                    await context.Log.AddAsync(log);
+                    await context.Logbook.AddAsync(log);
                     await context.SaveChangesAsync();
+                    Debug.WriteLine("Log-ul a fost adaugat cu succes!");
                     return true;
                 }
             }

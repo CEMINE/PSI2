@@ -8,27 +8,31 @@ using PSI2.Services;
 
 namespace PSI2
 {
+    
     public partial class Form1 : Form
     {
-        public Form1()
-        {
-            InitializeComponent();
-            var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-            var connectionString = ConfigurationManager.ConnectionStrings["PSI"].ConnectionString;
-            optionsBuilder.UseSqlServer(connectionString);
-            _context = new AppDbContext(optionsBuilder.Options);
-        }
-
-        //string connectionString = "Server=DESKTOP-0QEIVV4\\CC;Database=PSI;User Id=admin;Password=admin;TrustServerCertificate=True;Integrated Security=False;";
         string username;
         string password;
         IEnumerable<DoctorModel> doctorList;
         DoctorServices _doctorServices = new DoctorServices();
         private AppDbContext _context;
 
+        public static class User
+        {
+            public static int UserID { get; set; }
+        }
+        public Form1()
+        {
+            InitializeComponent();
+            InitializeDbContext();
+        }
+
         private void InitializeDbContext()
         {
-
+            var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
+            var connectionString = ConfigurationManager.ConnectionStrings["PSI"].ConnectionString;
+            optionsBuilder.UseSqlServer(connectionString);
+            _context = new AppDbContext(optionsBuilder.Options);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -51,6 +55,7 @@ namespace PSI2
                     this.Hide();
                     Meniu m = new Meniu();
                     m.Show();
+                    User.UserID = user.DoctorID;
                 }
                 else
                 {

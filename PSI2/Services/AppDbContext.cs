@@ -10,5 +10,5 @@ public class AppDbContext : DbContext
 
     public DbSet<DoctorModel> Doctor { get; set; }
     public DbSet<PatientModel> Patient { get; set; }
-    public DbSet<LogModel> Log { get; set; }
+    public DbSet<LogModel> Logbook { get; set; }
 }

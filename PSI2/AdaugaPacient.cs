@@ -1,4 +1,5 @@
-﻿using PSI2.Models;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using PSI2.Models;
 using PSI2.Services;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace PSI2
 {
     public partial class AdaugaPacient : Form
@@ -23,6 +25,8 @@ namespace PSI2
 
         char? sex;
         PatientServices _patientServices = new PatientServices();
+        DoctorServices _doctorServices = new DoctorServices();
+        Logger _logger = new Logger();
         string nume, prenume, telefon, adresa, cnp, serie, numar, cetatenie, stareCivila;
         DateTime dataNasterii;
 
@@ -125,6 +129,12 @@ namespace PSI2
             if(await _patientServices.AddPatient(patientModel))
             {
                 MessageBox.Show("Pacient adaugat cu success!");
+                LogModel lm = new LogModel();
+                lm.OperationDate = DateTime.Now;
+                lm.Username = _doctorServices.GetAllDoctors().Where(x => x.DoctorID == Form1.User.UserID).First().Username;
+                lm.OperationDescription = $"Doctorul a adaugat pacientul {patientModel.LastName} {patientModel.FirstName} / CNP {patientModel.CNP}";
+                await _logger.Log(lm);
+                Debug.WriteLine($"Debug log-uri: op date: {lm.OperationDate} / username : {lm.Username} / descriere {lm.OperationDescription}");
                 this.Hide();
                 Meniu m = new Meniu();
                 m.Show();
@@ -153,6 +163,7 @@ namespace PSI2
         private void btnAdaugaPacient_Click(object sender, EventArgs e)
         {
             AddToDb();
+
         }
     }
 }
