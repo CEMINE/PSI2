@@ -19,6 +19,11 @@ namespace PSI2
         PatientServices _patientServices = new PatientServices();
         int selectedPatientId = 0;
 
+        public static class Patient
+        {
+            public static int PatientID { get; set; }
+        }
+
         public Meniu()
         {
             InitializeComponent();
@@ -36,7 +41,7 @@ namespace PSI2
             AdaugaPacient ap = new AdaugaPacient();
             ap.Show();
         }
-       
+
         public class ListBoxItem
         {
             public int Id { get; set; }
@@ -89,7 +94,8 @@ namespace PSI2
                 string selectedName = selectedItem.FullName;
 
                 //MessageBox.Show($"Selected ID: {selectedId}, Name: {selectedName}");
-                Debug.WriteLine($"id pacient selectat: {selectedPatientId}");
+                Patient.PatientID = selectedPatientId;
+                Debug.WriteLine($"id pacient selectat: {Patient.PatientID}");
             }
         }
 
@@ -101,6 +107,13 @@ namespace PSI2
                 .ToList();
             SearchByFullName(filteredList);
 
+        }
+
+        private void btnAdaugaAdeverinta_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdeverintaMedicala adeverintaMedicala = new AdeverintaMedicala();
+            adeverintaMedicala.Show();
         }
     }
 }

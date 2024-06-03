@@ -12,7 +12,7 @@ namespace PSI2.Models
     {
         [Key]
         public int ID { get; set; }
-        public string? Judet { get; set; }
+        public string? Adresa { get; set; }
         public string? Observatii { get; set; }
         public string? Recomandare { get; set; }
         public string? MotivulEliberarii { get; set; }

@@ -32,6 +32,7 @@
             listBox1 = new ListBox();
             txtCautare = new TextBox();
             label2 = new Label();
+            btnAdaugaAdeverinta = new Button();
             SuspendLayout();
             // 
             // btnAdaugaPacient
@@ -71,11 +72,22 @@
             label2.TabIndex = 9;
             label2.Text = "Cauta pacient dupa numele complet:";
             // 
+            // btnAdaugaAdeverinta
+            // 
+            btnAdaugaAdeverinta.Location = new Point(576, 49);
+            btnAdaugaAdeverinta.Name = "btnAdaugaAdeverinta";
+            btnAdaugaAdeverinta.Size = new Size(114, 23);
+            btnAdaugaAdeverinta.TabIndex = 10;
+            btnAdaugaAdeverinta.Text = "Adauga adeverinta";
+            btnAdaugaAdeverinta.UseVisualStyleBackColor = true;
+            btnAdaugaAdeverinta.Click += btnAdaugaAdeverinta_Click;
+            // 
             // Meniu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnAdaugaAdeverinta);
             Controls.Add(label2);
             Controls.Add(txtCautare);
             Controls.Add(listBox1);
@@ -92,5 +104,6 @@
         private ListBox listBox1;
         private TextBox txtCautare;
         private Label label2;
+        private Button btnAdaugaAdeverinta;
     }
 }

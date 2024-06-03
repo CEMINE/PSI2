@@ -3,6 +3,7 @@ using PSI2.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,7 +40,11 @@ namespace PSI2.Services
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Exista o eroare la adaugare unei adeverinte medicale! \n Eroarea: " + ex.Message);
+                Debug.WriteLine("Exista o eroare la adaugare unei adeverinte medicale! \n Eroarea: " + ex.Message);
+                if (ex.InnerException != null)
+                {
+                    Debug.WriteLine($"Inner Exception: {ex.InnerException.Message}");
+                }
                 return false;
             }
         }
@@ -56,7 +61,7 @@ namespace PSI2.Services
 
             catch (Exception ex)
             {
-                MessageBox.Show("Exista o eroare la preluarea unei adeverinte medicale! \n Eroarea: " + ex.Message);
+                Debug.WriteLine("Exista o eroare la preluarea unei adeverinte medicale! \n Eroarea: " + ex.Message);
                 return null;
             }
         }
