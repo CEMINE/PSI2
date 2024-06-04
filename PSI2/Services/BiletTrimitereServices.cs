@@ -48,7 +48,7 @@ namespace PSI2.Services
             }
         }
 
-        public IEnumerable<BiletTrimitereModel> GetAllBileteTrimitere()
+        public List<BiletTrimitereModel> GetAllBileteTrimitere()
         {
             try
             {

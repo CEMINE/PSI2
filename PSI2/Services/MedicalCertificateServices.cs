@@ -65,5 +65,22 @@ namespace PSI2.Services
                 return null;
             }
         }
+
+        public List<MedicalCertificateModel> GetAllMedicalCertificates()
+        {
+            try
+            {
+                using (var context = new AppDbContext(_contextOptions))
+                {
+                    return context.MedicalCertificate.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it appropriately
+                // For now, we just throw it again
+                throw new Exception("An error occurred while fetching Medical Certificates", ex);
+            }
+        }
     }
 }

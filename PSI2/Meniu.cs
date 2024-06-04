@@ -16,7 +16,11 @@ namespace PSI2
     public partial class Meniu : Form
     {
         IEnumerable<PatientModel> patientList;
+        List<IDocument> documentList = new List<IDocument>();
+        List<IDocument> docsList;
         PatientServices _patientServices = new PatientServices();
+        BiletTrimitereServices _btServices = new BiletTrimitereServices();
+        MedicalCertificateServices _medicalCertificateServices = new MedicalCertificateServices();
         int selectedPatientId = 0;
 
         public static class Patient
@@ -32,6 +36,7 @@ namespace PSI2
         private void Meniu_Load(object sender, EventArgs e)
         {
             patientList = _patientServices.GetAllPatients();
+
             PopulateListBox();
         }
 
@@ -59,6 +64,23 @@ namespace PSI2
             }
         }
 
+        public class DocumentListBoxItem
+        {
+            public int Id { get; set; }
+            public string DocumentType { get; set; }
+
+            public DocumentListBoxItem(int id, string doctype)
+            {
+                Id = id;
+                DocumentType = doctype;
+            }
+
+            public override string ToString()
+            {
+                return DocumentType;
+            }
+        }
+
         private void PopulateListBox()
         {
             List<ListBoxItem> patients = new List<ListBoxItem>();
@@ -70,6 +92,19 @@ namespace PSI2
             listBox1.DisplayMember = "FullName";
             listBox1.ValueMember = "Id";
             listBox1.DataSource = patients;
+        }
+
+        private void PopulateDocumentListBox()
+        {
+            List<DocumentListBoxItem> lst = new List<DocumentListBoxItem>();
+            foreach (var item in documentList)
+            {
+                lst.Add(new DocumentListBoxItem(item.DocID, item.DocType));
+            }
+
+            listBox2.DisplayMember = "DocumentType";
+            listBox2.ValueMember = "Id";
+            listBox2.DataSource = lst;
         }
 
         private void SearchByFullName(List<PatientModel> filteredList)
@@ -97,6 +132,14 @@ namespace PSI2
                 Patient.PatientID = selectedPatientId;
                 Debug.WriteLine($"id pacient selectat: {Patient.PatientID}");
             }
+            documentList = null;
+            //de facut sa mearga listele 
+            var a = _btServices.GetAllBileteTrimitere().Where(x => x.PatientID == selectedPatientId).ToList();
+            var b = _medicalCertificateServices.GetAllMedicalCertificates().Where(x => x.PatientID == selectedPatientId).ToList();
+            
+            
+
+            PopulateDocumentListBox();
         }
 
         private void txtCautare_TextChanged(object sender, EventArgs e)
@@ -121,6 +164,11 @@ namespace PSI2
             this.Hide();
             BiletTrimitere btm = new BiletTrimitere();
             btm.Show();
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

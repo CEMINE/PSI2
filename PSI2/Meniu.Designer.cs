@@ -34,6 +34,7 @@
             label2 = new Label();
             btnAdaugaAdeverinta = new Button();
             btnAdaugaBilet = new Button();
+            listBox2 = new ListBox();
             SuspendLayout();
             // 
             // btnAdaugaPacient
@@ -52,7 +53,7 @@
             listBox1.ItemHeight = 15;
             listBox1.Location = new Point(9, 66);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(306, 244);
+            listBox1.Size = new Size(230, 244);
             listBox1.TabIndex = 7;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
@@ -60,7 +61,7 @@
             // 
             txtCautare.Location = new Point(9, 39);
             txtCautare.Name = "txtCautare";
-            txtCautare.Size = new Size(306, 23);
+            txtCautare.Size = new Size(230, 23);
             txtCautare.TabIndex = 8;
             txtCautare.TextChanged += txtCautare_TextChanged;
             // 
@@ -93,6 +94,16 @@
             btnAdaugaBilet.UseVisualStyleBackColor = true;
             btnAdaugaBilet.Click += btnAdaugaBilet_Click;
             // 
+            // listBox2
+            // 
+            listBox2.FormattingEnabled = true;
+            listBox2.ItemHeight = 15;
+            listBox2.Location = new Point(245, 66);
+            listBox2.Name = "listBox2";
+            listBox2.Size = new Size(133, 244);
+            listBox2.TabIndex = 7;
+            listBox2.SelectedIndexChanged += listBox2_SelectedIndexChanged;
+            // 
             // Meniu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -102,6 +113,7 @@
             Controls.Add(btnAdaugaAdeverinta);
             Controls.Add(label2);
             Controls.Add(txtCautare);
+            Controls.Add(listBox2);
             Controls.Add(listBox1);
             Controls.Add(btnAdaugaPacient);
             Name = "Meniu";
@@ -118,5 +130,6 @@
         private Label label2;
         private Button btnAdaugaAdeverinta;
         private Button btnAdaugaBilet;
+        private ListBox listBox2;
     }
 }

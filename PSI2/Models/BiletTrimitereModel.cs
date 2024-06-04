@@ -10,10 +10,20 @@ using static PSI2.Meniu;
 
 namespace PSI2.Models
 {
-    public class BiletTrimitereModel
+    public class BiletTrimitereModel : IDocument
     {
+        private int _id;
+
         [Key]
-        public int ID { get; set; }
+        public int ID
+        {
+            get => _id;
+            set
+            {
+                _id = value;
+                DocID = _id;
+            }
+        }
 
         [ForeignKey("Patient")]
         public int PatientID { get; set; }
@@ -42,8 +52,11 @@ namespace PSI2.Models
 
         public string? MotivRecomandareDomiciliu { get; set; }
 
-        // Navigation properties
         public virtual PatientModel? Patient { get; set; }
         public virtual DoctorModel? Doctor { get; set; }
+        [NotMapped]
+        public string DocType { get; set; } = "BiletTrimitere";
+        [NotMapped]
+        public int DocID { get; set; }
     }
 }

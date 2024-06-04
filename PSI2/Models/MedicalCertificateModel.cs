@@ -8,10 +8,20 @@ using System.Threading.Tasks;
 
 namespace PSI2.Models
 {
-    public class MedicalCertificateModel
+    public class MedicalCertificateModel : IDocument
     {
+        private int _id;
+
         [Key]
-        public int ID { get; set; }
+        public int ID
+        {
+            get => _id;
+            set
+            {
+                _id = value;
+                DocID = _id;
+            }
+        }
         public string? Adresa { get; set; }
         public string? Observatii { get; set; }
         public string? Recomandare { get; set; }
@@ -23,5 +33,9 @@ namespace PSI2.Models
         public int DoctorID { get; set; }
         public PatientModel Patient { get; set; }
         public DoctorModel Doctor { get; set; }
+        [NotMapped]
+        public string DocType { get; set; } = "MedicalCertificate";
+        [NotMapped]
+        public int DocID { get; set; }
     }
 }
