@@ -9,6 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		PSI2\AdaugaPacient.Designer.cs = PSI2\AdaugaPacient.Designer.cs
 		PSI2\AdaugaPacient.resx = PSI2\AdaugaPacient.resx
+		PSI2\BiletTrimitere.cs = PSI2\BiletTrimitere.cs
+		PSI2\BiletTrimitere.Designer.cs = PSI2\BiletTrimitere.Designer.cs
+		PSI2\BiletTrimitere.resx = PSI2\BiletTrimitere.resx
 	EndProjectSection
 EndProject
 Global
