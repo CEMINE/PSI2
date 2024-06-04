@@ -33,13 +33,14 @@
             txtCautare = new TextBox();
             label2 = new Label();
             btnAdaugaAdeverinta = new Button();
+            btnAdaugaBilet = new Button();
             SuspendLayout();
             // 
             // btnAdaugaPacient
             // 
-            btnAdaugaPacient.Location = new Point(576, 10);
+            btnAdaugaPacient.Location = new Point(652, 10);
             btnAdaugaPacient.Name = "btnAdaugaPacient";
-            btnAdaugaPacient.Size = new Size(114, 23);
+            btnAdaugaPacient.Size = new Size(137, 23);
             btnAdaugaPacient.TabIndex = 1;
             btnAdaugaPacient.Text = "Adauga pacient";
             btnAdaugaPacient.UseVisualStyleBackColor = true;
@@ -74,19 +75,30 @@
             // 
             // btnAdaugaAdeverinta
             // 
-            btnAdaugaAdeverinta.Location = new Point(576, 49);
+            btnAdaugaAdeverinta.Location = new Point(652, 49);
             btnAdaugaAdeverinta.Name = "btnAdaugaAdeverinta";
-            btnAdaugaAdeverinta.Size = new Size(114, 23);
+            btnAdaugaAdeverinta.Size = new Size(137, 23);
             btnAdaugaAdeverinta.TabIndex = 10;
             btnAdaugaAdeverinta.Text = "Adauga adeverinta";
             btnAdaugaAdeverinta.UseVisualStyleBackColor = true;
             btnAdaugaAdeverinta.Click += btnAdaugaAdeverinta_Click;
+            // 
+            // btnAdaugaBilet
+            // 
+            btnAdaugaBilet.Location = new Point(652, 89);
+            btnAdaugaBilet.Name = "btnAdaugaBilet";
+            btnAdaugaBilet.Size = new Size(137, 23);
+            btnAdaugaBilet.TabIndex = 10;
+            btnAdaugaBilet.Text = "Adauga bilet trimitere";
+            btnAdaugaBilet.UseVisualStyleBackColor = true;
+            btnAdaugaBilet.Click += btnAdaugaBilet_Click;
             // 
             // Meniu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnAdaugaBilet);
             Controls.Add(btnAdaugaAdeverinta);
             Controls.Add(label2);
             Controls.Add(txtCautare);
@@ -105,5 +117,6 @@
         private TextBox txtCautare;
         private Label label2;
         private Button btnAdaugaAdeverinta;
+        private Button btnAdaugaBilet;
     }
 }

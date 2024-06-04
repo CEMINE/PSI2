@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox22 = new TextBox();
-            textBox21 = new TextBox();
-            textBox20 = new TextBox();
-            textBox17 = new TextBox();
-            textBox16 = new TextBox();
+            txtTratamenteEfectuate = new TextBox();
+            txtMotiv = new TextBox();
+            txtAlteDiagnostice = new TextBox();
+            txtDiagnostic = new TextBox();
+            txtCodDiagnostic = new TextBox();
             label35 = new Label();
             label34 = new Label();
             label31 = new Label();
@@ -46,77 +46,77 @@
             label12 = new Label();
             label3 = new Label();
             label6 = new Label();
-            textBox1 = new TextBox();
-            textBox4 = new TextBox();
+            txtUnitateMedicala = new TextBox();
+            txtAdresaUnitateMedicala = new TextBox();
             label11 = new Label();
             groupBox1 = new GroupBox();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
+            rbtCurente = new RadioButton();
+            rbtUrgenta = new RadioButton();
             label16 = new Label();
             label17 = new Label();
             label18 = new Label();
             label21 = new Label();
             label19 = new Label();
-            textBox7 = new TextBox();
-            textBox12 = new TextBox();
-            textBox13 = new TextBox();
-            textBox8 = new TextBox();
-            textBox9 = new TextBox();
+            txtAdresaPacient = new TextBox();
+            txtCNP = new TextBox();
+            txtCetatenie = new TextBox();
+            txtPrenume = new TextBox();
+            txtNume = new TextBox();
             label23 = new Label();
             label26 = new Label();
             label27 = new Label();
-            textBox14 = new TextBox();
-            textBox15 = new TextBox();
+            txtSerie = new TextBox();
+            txtNr = new TextBox();
             panel1 = new Panel();
             dateTimePicker2 = new DateTimePicker();
             richTextBox1 = new RichTextBox();
-            dateTimePicker1 = new DateTimePicker();
+            dtpDataTrimiterii = new DateTimePicker();
             label40 = new Label();
             label36 = new Label();
-            textBox23 = new TextBox();
+            txtNrConsultatii = new TextBox();
             label44 = new Label();
             label43 = new Label();
             label48 = new Label();
             label49 = new Label();
-            button1 = new Button();
+            btnSalveaza = new Button();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // textBox22
+            // txtTratamenteEfectuate
             // 
-            textBox22.Location = new Point(32, 810);
-            textBox22.Name = "textBox22";
-            textBox22.Size = new Size(522, 23);
-            textBox22.TabIndex = 127;
+            txtTratamenteEfectuate.Location = new Point(32, 810);
+            txtTratamenteEfectuate.Name = "txtTratamenteEfectuate";
+            txtTratamenteEfectuate.Size = new Size(522, 23);
+            txtTratamenteEfectuate.TabIndex = 127;
             // 
-            // textBox21
+            // txtMotiv
             // 
-            textBox21.Location = new Point(32, 754);
-            textBox21.Name = "textBox21";
-            textBox21.Size = new Size(522, 23);
-            textBox21.TabIndex = 126;
+            txtMotiv.Location = new Point(32, 754);
+            txtMotiv.Name = "txtMotiv";
+            txtMotiv.Size = new Size(522, 23);
+            txtMotiv.TabIndex = 126;
             // 
-            // textBox20
+            // txtAlteDiagnostice
             // 
-            textBox20.Location = new Point(203, 706);
-            textBox20.Name = "textBox20";
-            textBox20.Size = new Size(351, 23);
-            textBox20.TabIndex = 125;
+            txtAlteDiagnostice.Location = new Point(203, 706);
+            txtAlteDiagnostice.Name = "txtAlteDiagnostice";
+            txtAlteDiagnostice.Size = new Size(351, 23);
+            txtAlteDiagnostice.TabIndex = 125;
             // 
-            // textBox17
+            // txtDiagnostic
             // 
-            textBox17.Location = new Point(246, 584);
-            textBox17.Name = "textBox17";
-            textBox17.Size = new Size(308, 23);
-            textBox17.TabIndex = 121;
+            txtDiagnostic.Location = new Point(246, 584);
+            txtDiagnostic.Name = "txtDiagnostic";
+            txtDiagnostic.Size = new Size(308, 23);
+            txtDiagnostic.TabIndex = 121;
             // 
-            // textBox16
+            // txtCodDiagnostic
             // 
-            textBox16.Location = new Point(246, 611);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(308, 23);
-            textBox16.TabIndex = 120;
+            txtCodDiagnostic.Location = new Point(246, 611);
+            txtCodDiagnostic.Name = "txtCodDiagnostic";
+            txtCodDiagnostic.Size = new Size(308, 23);
+            txtCodDiagnostic.TabIndex = 120;
             // 
             // label35
             // 
@@ -236,19 +236,19 @@
             label6.TabIndex = 65;
             label6.Text = "Adresa";
             // 
-            // textBox1
+            // txtUnitateMedicala
             // 
-            textBox1.Location = new Point(144, 144);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(675, 23);
-            textBox1.TabIndex = 68;
+            txtUnitateMedicala.Location = new Point(144, 144);
+            txtUnitateMedicala.Name = "txtUnitateMedicala";
+            txtUnitateMedicala.Size = new Size(675, 23);
+            txtUnitateMedicala.TabIndex = 68;
             // 
-            // textBox4
+            // txtAdresaUnitateMedicala
             // 
-            textBox4.Location = new Point(79, 178);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(743, 23);
-            textBox4.TabIndex = 71;
+            txtAdresaUnitateMedicala.Location = new Point(79, 178);
+            txtAdresaUnitateMedicala.Name = "txtAdresaUnitateMedicala";
+            txtAdresaUnitateMedicala.Size = new Size(743, 23);
+            txtAdresaUnitateMedicala.TabIndex = 71;
             // 
             // label11
             // 
@@ -261,35 +261,37 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(radioButton2);
-            groupBox1.Controls.Add(radioButton1);
+            groupBox1.Controls.Add(rbtCurente);
+            groupBox1.Controls.Add(rbtUrgenta);
             groupBox1.Location = new Point(144, 216);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(200, 100);
             groupBox1.TabIndex = 80;
             groupBox1.TabStop = false;
             // 
-            // radioButton2
+            // rbtCurente
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(21, 63);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(67, 19);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Curente";
-            radioButton2.UseVisualStyleBackColor = true;
+            rbtCurente.AutoSize = true;
+            rbtCurente.Location = new Point(21, 63);
+            rbtCurente.Name = "rbtCurente";
+            rbtCurente.Size = new Size(67, 19);
+            rbtCurente.TabIndex = 1;
+            rbtCurente.TabStop = true;
+            rbtCurente.Text = "Curente";
+            rbtCurente.UseVisualStyleBackColor = true;
+            rbtCurente.CheckedChanged += rbtCurente_CheckedChanged;
             // 
-            // radioButton1
+            // rbtUrgenta
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(21, 21);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(67, 19);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Urgenta";
-            radioButton1.UseVisualStyleBackColor = true;
+            rbtUrgenta.AutoSize = true;
+            rbtUrgenta.Location = new Point(21, 21);
+            rbtUrgenta.Name = "rbtUrgenta";
+            rbtUrgenta.Size = new Size(67, 19);
+            rbtUrgenta.TabIndex = 0;
+            rbtUrgenta.TabStop = true;
+            rbtUrgenta.Text = "Urgenta";
+            rbtUrgenta.UseVisualStyleBackColor = true;
+            rbtUrgenta.CheckedChanged += rbtUrgenta_CheckedChanged;
             // 
             // label16
             // 
@@ -335,40 +337,40 @@
             label19.TabIndex = 89;
             label19.Text = "CNP";
             // 
-            // textBox7
+            // txtAdresaPacient
             // 
-            textBox7.Location = new Point(95, 434);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(724, 23);
-            textBox7.TabIndex = 90;
+            txtAdresaPacient.Location = new Point(95, 434);
+            txtAdresaPacient.Name = "txtAdresaPacient";
+            txtAdresaPacient.Size = new Size(724, 23);
+            txtAdresaPacient.TabIndex = 90;
             // 
-            // textBox12
+            // txtCNP
             // 
-            textBox12.Location = new Point(95, 489);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(724, 23);
-            textBox12.TabIndex = 91;
+            txtCNP.Location = new Point(95, 489);
+            txtCNP.Name = "txtCNP";
+            txtCNP.Size = new Size(724, 23);
+            txtCNP.TabIndex = 91;
             // 
-            // textBox13
+            // txtCetatenie
             // 
-            textBox13.Location = new Point(95, 541);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(724, 23);
-            textBox13.TabIndex = 92;
+            txtCetatenie.Location = new Point(95, 541);
+            txtCetatenie.Name = "txtCetatenie";
+            txtCetatenie.Size = new Size(724, 23);
+            txtCetatenie.TabIndex = 92;
             // 
-            // textBox8
+            // txtPrenume
             // 
-            textBox8.Location = new Point(95, 400);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(724, 23);
-            textBox8.TabIndex = 93;
+            txtPrenume.Location = new Point(95, 400);
+            txtPrenume.Name = "txtPrenume";
+            txtPrenume.Size = new Size(724, 23);
+            txtPrenume.TabIndex = 93;
             // 
-            // textBox9
+            // txtNume
             // 
-            textBox9.Location = new Point(95, 366);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(724, 23);
-            textBox9.TabIndex = 94;
+            txtNume.Location = new Point(95, 366);
+            txtNume.Name = "txtNume";
+            txtNume.Size = new Size(724, 23);
+            txtNume.TabIndex = 94;
             // 
             // label23
             // 
@@ -399,54 +401,55 @@
             label27.TabIndex = 102;
             label27.Text = "Nr";
             // 
-            // textBox14
+            // txtSerie
             // 
-            textBox14.Location = new Point(268, 61);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(149, 23);
-            textBox14.TabIndex = 103;
+            txtSerie.Location = new Point(268, 61);
+            txtSerie.Name = "txtSerie";
+            txtSerie.Size = new Size(149, 23);
+            txtSerie.TabIndex = 103;
             // 
-            // textBox15
+            // txtNr
             // 
-            textBox15.Location = new Point(463, 61);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(175, 23);
-            textBox15.TabIndex = 104;
+            txtNr.Enabled = false;
+            txtNr.Location = new Point(463, 61);
+            txtNr.Name = "txtNr";
+            txtNr.Size = new Size(175, 23);
+            txtNr.TabIndex = 104;
             // 
             // panel1
             // 
             panel1.AutoScroll = true;
             panel1.Controls.Add(dateTimePicker2);
             panel1.Controls.Add(richTextBox1);
-            panel1.Controls.Add(dateTimePicker1);
+            panel1.Controls.Add(dtpDataTrimiterii);
             panel1.Controls.Add(label40);
             panel1.Controls.Add(label36);
-            panel1.Controls.Add(textBox23);
+            panel1.Controls.Add(txtNrConsultatii);
             panel1.Controls.Add(label44);
             panel1.Controls.Add(label43);
             panel1.Controls.Add(label48);
             panel1.Controls.Add(label49);
-            panel1.Controls.Add(textBox22);
-            panel1.Controls.Add(textBox21);
-            panel1.Controls.Add(textBox20);
-            panel1.Controls.Add(textBox17);
-            panel1.Controls.Add(textBox16);
+            panel1.Controls.Add(txtTratamenteEfectuate);
+            panel1.Controls.Add(txtMotiv);
+            panel1.Controls.Add(txtAlteDiagnostice);
+            panel1.Controls.Add(txtDiagnostic);
+            panel1.Controls.Add(txtCodDiagnostic);
             panel1.Controls.Add(label35);
             panel1.Controls.Add(label34);
             panel1.Controls.Add(label31);
             panel1.Controls.Add(label29);
             panel1.Controls.Add(label25);
             panel1.Controls.Add(label24);
-            panel1.Controls.Add(textBox15);
-            panel1.Controls.Add(textBox14);
+            panel1.Controls.Add(txtNr);
+            panel1.Controls.Add(txtSerie);
             panel1.Controls.Add(label27);
             panel1.Controls.Add(label26);
             panel1.Controls.Add(label23);
-            panel1.Controls.Add(textBox9);
-            panel1.Controls.Add(textBox8);
-            panel1.Controls.Add(textBox13);
-            panel1.Controls.Add(textBox12);
-            panel1.Controls.Add(textBox7);
+            panel1.Controls.Add(txtNume);
+            panel1.Controls.Add(txtPrenume);
+            panel1.Controls.Add(txtCetatenie);
+            panel1.Controls.Add(txtCNP);
+            panel1.Controls.Add(txtAdresaPacient);
             panel1.Controls.Add(label19);
             panel1.Controls.Add(label21);
             panel1.Controls.Add(label18);
@@ -454,8 +457,8 @@
             panel1.Controls.Add(label16);
             panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(label11);
-            panel1.Controls.Add(textBox4);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtAdresaUnitateMedicala);
+            panel1.Controls.Add(txtUnitateMedicala);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label12);
@@ -483,12 +486,12 @@
             richTextBox1.TabIndex = 163;
             richTextBox1.Text = "";
             // 
-            // dateTimePicker1
+            // dtpDataTrimiterii
             // 
-            dateTimePicker1.Location = new Point(173, 955);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 160;
+            dtpDataTrimiterii.Location = new Point(173, 955);
+            dtpDataTrimiterii.Name = "dtpDataTrimiterii";
+            dtpDataTrimiterii.Size = new Size(200, 23);
+            dtpDataTrimiterii.TabIndex = 160;
             // 
             // label40
             // 
@@ -508,12 +511,12 @@
             label36.Size = new Size(790, 3);
             label36.TabIndex = 158;
             // 
-            // textBox23
+            // txtNrConsultatii
             // 
-            textBox23.Location = new Point(246, 848);
-            textBox23.Name = "textBox23";
-            textBox23.Size = new Size(100, 23);
-            textBox23.TabIndex = 154;
+            txtNrConsultatii.Location = new Point(246, 848);
+            txtNrConsultatii.Name = "txtNrConsultatii";
+            txtNrConsultatii.Size = new Size(100, 23);
+            txtNrConsultatii.TabIndex = 154;
             // 
             // label44
             // 
@@ -551,24 +554,26 @@
             label49.TabIndex = 143;
             label49.Text = "8.Numar de consultatii acordate";
             // 
-            // button1
+            // btnSalveaza
             // 
-            button1.Location = new Point(327, 775);
-            button1.Name = "button1";
-            button1.Size = new Size(161, 33);
-            button1.TabIndex = 1;
-            button1.Text = "Salveaza si printeaza";
-            button1.UseVisualStyleBackColor = true;
+            btnSalveaza.Location = new Point(327, 775);
+            btnSalveaza.Name = "btnSalveaza";
+            btnSalveaza.Size = new Size(161, 33);
+            btnSalveaza.TabIndex = 1;
+            btnSalveaza.Text = "Salveaza si inchide";
+            btnSalveaza.UseVisualStyleBackColor = true;
+            btnSalveaza.Click += btnSalveaza_Click;
             // 
             // BiletTrimitere
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(889, 811);
-            Controls.Add(button1);
+            Controls.Add(btnSalveaza);
             Controls.Add(panel1);
             Name = "BiletTrimitere";
             Text = "Bilet de Trimitere";
+            Load += BiletTrimitere_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             panel1.ResumeLayout(false);
@@ -578,11 +583,11 @@
 
         #endregion
 
-        private TextBox textBox22;
-        private TextBox textBox21;
-        private TextBox textBox20;
-        private TextBox textBox17;
-        private TextBox textBox16;
+        private TextBox txtTratamenteEfectuate;
+        private TextBox txtMotiv;
+        private TextBox txtAlteDiagnostice;
+        private TextBox txtDiagnostic;
+        private TextBox txtCodDiagnostic;
         private Label label35;
         private Label label34;
         private Label label31;
@@ -596,38 +601,38 @@
         private Label label12;
         private Label label3;
         private Label label6;
-        private TextBox textBox1;
-        private TextBox textBox4;
+        private TextBox txtUnitateMedicala;
+        private TextBox txtAdresaUnitateMedicala;
         private Label label11;
         private GroupBox groupBox1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private RadioButton rbtCurente;
+        private RadioButton rbtUrgenta;
         private Label label16;
         private Label label17;
         private Label label18;
         private Label label21;
         private Label label19;
-        private TextBox textBox7;
-        private TextBox textBox12;
-        private TextBox textBox13;
-        private TextBox textBox8;
-        private TextBox textBox9;
+        private TextBox txtAdresaPacient;
+        private TextBox txtCNP;
+        private TextBox txtCetatenie;
+        private TextBox txtPrenume;
+        private TextBox txtNume;
         private Label label23;
         private Label label26;
         private Label label27;
-        private TextBox textBox14;
-        private TextBox textBox15;
+        private TextBox txtSerie;
+        private TextBox txtNr;
         private Panel panel1;
         private DateTimePicker dateTimePicker2;
         private RichTextBox richTextBox1;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpDataTrimiterii;
         private Label label40;
         private Label label36;
-        private TextBox textBox23;
+        private TextBox txtNrConsultatii;
         private Label label44;
         private Label label43;
         private Label label48;
         private Label label49;
-        private Button button1;
+        private Button btnSalveaza;
     }
 }

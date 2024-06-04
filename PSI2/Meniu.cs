@@ -115,5 +115,12 @@ namespace PSI2
             AdeverintaMedicala adeverintaMedicala = new AdeverintaMedicala();
             adeverintaMedicala.Show();
         }
+
+        private void btnAdaugaBilet_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BiletTrimitere btm = new BiletTrimitere();
+            btm.Show();
+        }
     }
 }

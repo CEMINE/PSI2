@@ -38,6 +38,7 @@ namespace PSI2.Models
         public int NrConsultatiiAcordate { get; set; }
 
         public DateTime DataTrimiterii { get; set; }
+        public DateTime DataPrezentarePacient { get; set; }
 
         public string? MotivRecomandareDomiciliu { get; set; }
 
