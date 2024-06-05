@@ -35,6 +35,7 @@
             btnAdaugaAdeverinta = new Button();
             btnAdaugaBilet = new Button();
             listBox2 = new ListBox();
+            btnVizualizareDocument = new Button();
             SuspendLayout();
             // 
             // btnAdaugaPacient
@@ -104,6 +105,16 @@
             listBox2.TabIndex = 7;
             listBox2.SelectedIndexChanged += listBox2_SelectedIndexChanged;
             // 
+            // btnVizualizareDocument
+            // 
+            btnVizualizareDocument.Location = new Point(509, 10);
+            btnVizualizareDocument.Name = "btnVizualizareDocument";
+            btnVizualizareDocument.Size = new Size(137, 23);
+            btnVizualizareDocument.TabIndex = 1;
+            btnVizualizareDocument.Text = "Vizualizare document";
+            btnVizualizareDocument.UseVisualStyleBackColor = true;
+            btnVizualizareDocument.Click += btnVizualizareDocument_Click;
+            // 
             // Meniu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -115,6 +126,7 @@
             Controls.Add(txtCautare);
             Controls.Add(listBox2);
             Controls.Add(listBox1);
+            Controls.Add(btnVizualizareDocument);
             Controls.Add(btnAdaugaPacient);
             Name = "Meniu";
             Text = "Meniu";
@@ -131,5 +143,6 @@
         private Button btnAdaugaAdeverinta;
         private Button btnAdaugaBilet;
         private ListBox listBox2;
+        private Button btnVizualizareDocument;
     }
 }

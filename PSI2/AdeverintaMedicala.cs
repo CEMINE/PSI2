@@ -124,5 +124,17 @@ namespace PSI2
             
             
         }
+
+        public void IncarcareDate()
+        {
+            
+            MedicalCertificateModel adv = new MedicalCertificateModel();
+            adv = _medicalCertificateServices.GetAllMedicalCertificates().Where(x => x.ID == Meniu.DocumentVizualizare.ID).First();
+            txtBoala.Text = adv.Observatii;
+            txtRecomandare.Text = adv.Recomandare;
+            txtMotivEliberare.Text = adv.MotivulEliberarii;
+            dtpDataEliberarii.Value = adv.DataEliberarii;
+            txtNrFisa.Text = adv.ID.ToString();
+        }
     }
 }

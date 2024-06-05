@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
+using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,16 +17,22 @@ namespace PSI2
     public partial class Meniu : Form
     {
         IEnumerable<PatientModel> patientList;
-        List<IDocument> documentList = new List<IDocument>();
-        List<IDocument> docsList;
+        IEnumerable<IDocument> docsList;
         PatientServices _patientServices = new PatientServices();
         BiletTrimitereServices _btServices = new BiletTrimitereServices();
         MedicalCertificateServices _medicalCertificateServices = new MedicalCertificateServices();
         int selectedPatientId = 0;
+        int selectedDocumentId = 0;
 
         public static class Patient
         {
             public static int PatientID { get; set; }
+        }
+
+        public static class DocumentVizualizare
+        {
+            public static int ID { get; set; }
+            public static string DocType { get; set; }
         }
 
         public Meniu()
@@ -97,7 +104,7 @@ namespace PSI2
         private void PopulateDocumentListBox()
         {
             List<DocumentListBoxItem> lst = new List<DocumentListBoxItem>();
-            foreach (var item in documentList)
+            foreach (var item in docsList)
             {
                 lst.Add(new DocumentListBoxItem(item.DocID, item.DocType));
             }
@@ -132,12 +139,13 @@ namespace PSI2
                 Patient.PatientID = selectedPatientId;
                 Debug.WriteLine($"id pacient selectat: {Patient.PatientID}");
             }
-            documentList = null;
-            //de facut sa mearga listele 
+            //listele sunt functionale
+            //trebuie adaugate si concatenate listele in docsList in momentul in care vor fi adaugate si alte documente
+            docsList = null;
             var a = _btServices.GetAllBileteTrimitere().Where(x => x.PatientID == selectedPatientId).ToList();
             var b = _medicalCertificateServices.GetAllMedicalCertificates().Where(x => x.PatientID == selectedPatientId).ToList();
-            
-            
+            docsList = (a ?? Enumerable.Empty<IDocument>()).Concat(b ?? Enumerable.Empty<IDocument>());
+
 
             PopulateDocumentListBox();
         }
@@ -168,7 +176,34 @@ namespace PSI2
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listBox1.SelectedItem != null)
+            {
+                var selectedItem = (DocumentListBoxItem)listBox2.SelectedItem;
+                selectedDocumentId = selectedItem.Id;
+                string selectedName = selectedItem.DocumentType;
 
+                //MessageBox.Show($"Selected ID: {selectedId}, Name: {selectedName}");
+                DocumentVizualizare.ID = selectedDocumentId;
+                DocumentVizualizare.DocType = selectedName;
+                Debug.WriteLine($"id document selectat: {DocumentVizualizare.ID} // tip document selectat {DocumentVizualizare.DocType}");
+            }
+        }
+
+        private void btnVizualizareDocument_Click(object sender, EventArgs e)
+        {
+            //trebuie adaugate if-uri sau facut un switch pentru fiecare tip de document
+            if(DocumentVizualizare.DocType.Contains("BiletTrimitere"))
+            {
+                BiletTrimitere btm = new BiletTrimitere();
+                btm.Show();
+                btm.IncarcareDate();
+            }
+            if(DocumentVizualizare.DocType.Contains("MedicalCertificate"))
+            {
+                AdeverintaMedicala a = new AdeverintaMedicala();
+                a.Show();
+                a.IncarcareDate();
+            }
         }
     }
 }

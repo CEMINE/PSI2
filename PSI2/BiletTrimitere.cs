@@ -23,6 +23,7 @@ namespace PSI2
         DoctorModel doctor;
         BiletTrimitereModel bt = new BiletTrimitereModel();
         string nivelPrioritate;
+
         public BiletTrimitere()
         {
             InitializeComponent();
@@ -61,37 +62,37 @@ namespace PSI2
                 MessageBox.Show("Completati diagnostic!");
                 return;
             }
-            if(String.IsNullOrEmpty(txtCodDiagnostic.Text))
+            if (String.IsNullOrEmpty(txtCodDiagnostic.Text))
             {
                 MessageBox.Show("Completati cod diagnostic!");
                 return;
             }
-            if(String.IsNullOrEmpty(txtMotiv.Text))
+            if (String.IsNullOrEmpty(txtMotiv.Text))
             {
                 MessageBox.Show("Nu ati completat motivul trimiterii!");
                 return;
             }
-            if(String.IsNullOrEmpty(txtTratamenteEfectuate.Text))
+            if (String.IsNullOrEmpty(txtTratamenteEfectuate.Text))
             {
                 MessageBox.Show("Nu ati completat campul investigatii si tratamente efectuate!");
                 return;
             }
-            if(String.IsNullOrEmpty(txtNrConsultatii.Text))
+            if (String.IsNullOrEmpty(txtNrConsultatii.Text))
             {
                 MessageBox.Show("Nu ati completat numarul de consultatii acordate!");
                 return;
             }
-            if(String.IsNullOrEmpty(richTextBox1.Text))
+            if (String.IsNullOrEmpty(richTextBox1.Text))
             {
                 MessageBox.Show("Nu ati completat motivul pentru care nu a fost necesare internarea!");
                 return;
             }
-            if(String.IsNullOrEmpty(txtSerie.Text))
+            if (String.IsNullOrEmpty(txtSerie.Text))
             {
                 MessageBox.Show("Nu ati completat seria!");
                 return;
             }
-            if(String.IsNullOrEmpty(nivelPrioritate))
+            if (String.IsNullOrEmpty(nivelPrioritate))
             {
                 MessageBox.Show("Nu ati selectat nivelul de prioritate!");
                 return;
@@ -124,7 +125,25 @@ namespace PSI2
             {
                 MessageBox.Show("A aparut o eroare la salvarea biletului de trimitere!");
             }
-            
+
+        }
+
+        public void IncarcareDate()
+        {
+            int docID = Meniu.DocumentVizualizare.ID;
+            BiletTrimitereModel btVizualizare = new BiletTrimitereModel();
+            btVizualizare = _btServices.GetAllBileteTrimitere().Where(x => x.ID == docID).First();
+            txtDiagnostic.Text = btVizualizare.Diagnostic;
+            txtCodDiagnostic.Text = btVizualizare.CodDiagnostic;
+            txtAlteDiagnostice.Text = btVizualizare.AlteDiagnosticeCunoscute;
+            txtMotiv.Text = btVizualizare.MotivulTrimiterii;
+            txtTratamenteEfectuate.Text = btVizualizare.InvestigatiiEfectuate;
+            txtNrConsultatii.Text = btVizualizare.NrConsultatiiAcordate.ToString();
+            dtpDataTrimiterii.Value = btVizualizare.DataTrimiterii;
+            richTextBox1.Text = btVizualizare.MotivRecomandareDomiciliu;
+            dateTimePicker2.Value = btVizualizare.DataPrezentarePacient;
+            txtSerie.Text = btVizualizare.Serie;
+            txtNr.Text = btVizualizare.ID.ToString();
         }
     }
 }

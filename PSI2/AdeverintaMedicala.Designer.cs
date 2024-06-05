@@ -160,6 +160,7 @@
             // 
             // txtNrFisa
             // 
+            txtNrFisa.Enabled = false;
             txtNrFisa.Location = new Point(619, 40);
             txtNrFisa.Name = "txtNrFisa";
             txtNrFisa.Size = new Size(143, 23);
@@ -211,14 +212,14 @@
             // 
             txtAdresaCabinet.Location = new Point(111, 37);
             txtAdresaCabinet.Name = "txtAdresaCabinet";
-            txtAdresaCabinet.Size = new Size(143, 23);
+            txtAdresaCabinet.Size = new Size(380, 23);
             txtAdresaCabinet.TabIndex = 60;
             // 
             // txtUnitateSanitara
             // 
             txtUnitateSanitara.Location = new Point(111, 8);
             txtUnitateSanitara.Name = "txtUnitateSanitara";
-            txtUnitateSanitara.Size = new Size(143, 23);
+            txtUnitateSanitara.Size = new Size(380, 23);
             txtUnitateSanitara.TabIndex = 60;
             // 
             // label24
@@ -384,7 +385,6 @@
             Controls.Add(btnCreeazaAdeverinta);
             Controls.Add(panel1);
             Name = "AdeverintaMedicala";
-            Text = "AdeverintaMedicala";
             Load += AdeverintaMedicala_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
