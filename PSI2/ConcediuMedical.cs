@@ -126,6 +126,22 @@ namespace PSI2
                 MessageBox.Show("Nu ati completat campul indemnizatie suportata din fondul de asigurare!");
                 return;
             }
+            if(IsNumber(txtIndemnizatieAngajator.Text))
+            {
+                MessageBox.Show("Indemnizatia suportata de catre angajator trebuie sa fie un numar!");
+                return;
+            }
+            if (IsNumber(txtIndemnizatieFNUASS.Text))
+            {
+                MessageBox.Show("Indemnizatia suportata de catre FNUASS trebuie sa fie un numar!");
+                return;
+            }
+            if (IsNumber(txtIndemnizatieFond.Text))
+            {
+                MessageBox.Show("Indemnizatia suportata de catre fond trebuie sa fie un numar!");
+                return;
+            }
+
 
             cm.Luna = Convert.ToInt32(numLuna.Value);
             cm.Anul = Convert.ToInt32(numAnul.Value);
@@ -321,6 +337,12 @@ namespace PSI2
             txtIndemnizatieFNUASS.Text = cm.IndemnizatieFNUASS.ToString();
             txtIndemnizatieFond.Text = cm.IndemnizatieFont.ToString();
             dtpDataPrimirii.Value = cm.DataPrimirii;
+        }
+
+        public bool IsNumber(string t)
+        {
+            bool isNumber = double.TryParse(t, out double result);
+            return isNumber;
         }
     }
 }
