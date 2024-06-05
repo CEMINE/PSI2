@@ -99,6 +99,7 @@
             btnExit.TabIndex = 4;
             btnExit.Text = "Iesire";
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // Form1
             // 

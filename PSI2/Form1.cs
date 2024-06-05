@@ -8,7 +8,7 @@ using PSI2.Services;
 
 namespace PSI2
 {
-    
+
     public partial class Form1 : Form
     {
         string username;
@@ -37,7 +37,7 @@ namespace PSI2
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(!String.IsNullOrEmpty(txtUsername.Text) && !String.IsNullOrEmpty(txtPassword.Text))
+            if (!String.IsNullOrEmpty(txtUsername.Text) && !String.IsNullOrEmpty(txtPassword.Text))
             {
                 username = txtUsername.Text;
                 password = txtPassword.Text;
@@ -46,10 +46,10 @@ namespace PSI2
                 if (user == null)
                 {
                     MessageBox.Show("Numele de utilizator sau parola sunt gresite!");
-                    return; 
+                    return;
                 }
                 doctorList = _doctorServices.GetAllDoctors();
-                if(BCrypt.Net.BCrypt.EnhancedVerify(password, user.Password))
+                if (BCrypt.Net.BCrypt.EnhancedVerify(password, user.Password))
                 {
                     Debug.WriteLine($"e bun");
                     this.Hide();
@@ -61,7 +61,7 @@ namespace PSI2
                 {
                     MessageBox.Show("Numele de utilizator sau parola sunt gresite!");
                 }
-                foreach(var item in doctorList)
+                foreach (var item in doctorList)
                 {
                     Debug.WriteLine($"{item.FirstName}");
                 }
@@ -74,6 +74,9 @@ namespace PSI2
 
         }
 
-
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

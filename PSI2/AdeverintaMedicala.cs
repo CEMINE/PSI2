@@ -127,7 +127,6 @@ namespace PSI2
 
         public void IncarcareDate()
         {
-            
             MedicalCertificateModel adv = new MedicalCertificateModel();
             adv = _medicalCertificateServices.GetAllMedicalCertificates().Where(x => x.ID == Meniu.DocumentVizualizare.ID).First();
             txtBoala.Text = adv.Observatii;

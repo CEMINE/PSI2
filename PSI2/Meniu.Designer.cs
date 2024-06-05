@@ -36,6 +36,7 @@
             btnAdaugaBilet = new Button();
             listBox2 = new ListBox();
             btnVizualizareDocument = new Button();
+            btnAdaugaConcediuMedical = new Button();
             SuspendLayout();
             // 
             // btnAdaugaPacient
@@ -115,11 +116,22 @@
             btnVizualizareDocument.UseVisualStyleBackColor = true;
             btnVizualizareDocument.Click += btnVizualizareDocument_Click;
             // 
+            // btnAdaugaConcediuMedical
+            // 
+            btnAdaugaConcediuMedical.Location = new Point(652, 130);
+            btnAdaugaConcediuMedical.Name = "btnAdaugaConcediuMedical";
+            btnAdaugaConcediuMedical.Size = new Size(136, 23);
+            btnAdaugaConcediuMedical.TabIndex = 11;
+            btnAdaugaConcediuMedical.Text = "Adauga concediu medical";
+            btnAdaugaConcediuMedical.UseVisualStyleBackColor = true;
+            btnAdaugaConcediuMedical.Click += btnAdaugaConcediuMedical_Click;
+            // 
             // Meniu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnAdaugaConcediuMedical);
             Controls.Add(btnAdaugaBilet);
             Controls.Add(btnAdaugaAdeverinta);
             Controls.Add(label2);
@@ -144,5 +156,6 @@
         private Button btnAdaugaBilet;
         private ListBox listBox2;
         private Button btnVizualizareDocument;
+        private Button btnAdaugaConcediuMedical;
     }
 }

@@ -21,6 +21,7 @@ namespace PSI2
         PatientServices _patientServices = new PatientServices();
         BiletTrimitereServices _btServices = new BiletTrimitereServices();
         MedicalCertificateServices _medicalCertificateServices = new MedicalCertificateServices();
+        ConcediuMedicalServices _concediuMedicalServices = new ConcediuMedicalServices();
         int selectedPatientId = 0;
         int selectedDocumentId = 0;
 
@@ -144,7 +145,9 @@ namespace PSI2
             docsList = null;
             var a = _btServices.GetAllBileteTrimitere().Where(x => x.PatientID == selectedPatientId).ToList();
             var b = _medicalCertificateServices.GetAllMedicalCertificates().Where(x => x.PatientID == selectedPatientId).ToList();
-            docsList = (a ?? Enumerable.Empty<IDocument>()).Concat(b ?? Enumerable.Empty<IDocument>());
+            var c = _concediuMedicalServices.GetAllConcediiMedicale().Where(x => x.PatientID == selectedPatientId).ToList();
+
+            docsList = (a ?? Enumerable.Empty<IDocument>()).Concat(b ?? Enumerable.Empty<IDocument>()).Concat(c ?? Enumerable.Empty<IDocument>());
 
 
             PopulateDocumentListBox();
@@ -192,18 +195,31 @@ namespace PSI2
         private void btnVizualizareDocument_Click(object sender, EventArgs e)
         {
             //trebuie adaugate if-uri sau facut un switch pentru fiecare tip de document
-            if(DocumentVizualizare.DocType.Contains("BiletTrimitere"))
+            if (DocumentVizualizare.DocType.Contains("BiletTrimitere"))
             {
                 BiletTrimitere btm = new BiletTrimitere();
                 btm.Show();
                 btm.IncarcareDate();
             }
-            if(DocumentVizualizare.DocType.Contains("MedicalCertificate"))
+            if (DocumentVizualizare.DocType.Contains("MedicalCertificate"))
             {
                 AdeverintaMedicala a = new AdeverintaMedicala();
                 a.Show();
                 a.IncarcareDate();
             }
+            if(DocumentVizualizare.DocType.Contains("ConcediuMedical"))
+            {
+                ConcediuMedical cm = new ConcediuMedical();
+                cm.Show();
+                cm.IncarcaDate();
+            }
+        }
+
+        private void btnAdaugaConcediuMedical_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConcediuMedical cm = new ConcediuMedical();
+            cm.Show();
         }
     }
 }
