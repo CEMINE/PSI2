@@ -101,6 +101,12 @@ namespace PSI2
                 MessageBox.Show("Nu ati selectat data eliberarii!");
                 return;
             }
+            if (!IsNumber(txtCNP.Text))
+            {
+                MessageBox.Show("Campul CNP trebuie sa contina doar cifre!");
+                return;
+            }
+
             adv.Adresa = doctor.OfficeAddress;
             adv.Recomandare = recomandare;
             adv.DataEliberarii = Convert.ToDateTime(dataEliberare);
@@ -119,6 +125,7 @@ namespace PSI2
                 this.Hide();
                 Meniu m = new Meniu();
                 m.Show();
+
             }
             else
             {
@@ -144,6 +151,12 @@ namespace PSI2
             this.Hide();
             Meniu meniu = new Meniu();
             meniu.Show();
+        }
+
+        public bool IsNumber(string t)
+        {
+            bool isNumber = double.TryParse(t, out double result);
+            return isNumber;
         }
     }
 }

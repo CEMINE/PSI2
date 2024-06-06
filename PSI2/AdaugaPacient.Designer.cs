@@ -175,6 +175,7 @@
             txtNumar.Name = "txtNumar";
             txtNumar.Size = new Size(187, 23);
             txtNumar.TabIndex = 1;
+            txtNumar.TextChanged += txtNumar_TextChanged;
             // 
             // label9
             // 
@@ -338,6 +339,7 @@
             Controls.Add(label1);
             Name = "AdaugaPacient";
             Text = "AdaugaPacient";
+            Load += AdaugaPacient_Load;
             grpSex.ResumeLayout(false);
             grpSex.PerformLayout();
             ResumeLayout(false);

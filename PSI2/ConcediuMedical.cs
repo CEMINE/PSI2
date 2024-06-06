@@ -126,17 +126,17 @@ namespace PSI2
                 MessageBox.Show("Nu ati completat campul indemnizatie suportata din fondul de asigurare!");
                 return;
             }
-            if (IsNumber(txtIndemnizatieAngajator.Text))
+            if (!IsNumber(txtIndemnizatieAngajator.Text))
             {
                 MessageBox.Show("Indemnizatia suportata de catre angajator trebuie sa fie un numar!");
                 return;
             }
-            if (IsNumber(txtIndemnizatieFNUASS.Text))
+            if (!IsNumber(txtIndemnizatieFNUASS.Text))
             {
                 MessageBox.Show("Indemnizatia suportata de catre FNUASS trebuie sa fie un numar!");
                 return;
             }
-            if (IsNumber(txtIndemnizatieFond.Text))
+            if (!IsNumber(txtIndemnizatieFond.Text))
             {
                 MessageBox.Show("Indemnizatia suportata de catre fond trebuie sa fie un numar!");
                 return;

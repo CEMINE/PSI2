@@ -78,6 +78,11 @@ namespace PSI2
                 MessageBox.Show("Nu ati completat numarul de telefon!");
                 return;
             }
+            if (!IsNumber(txtTelefon.Text))
+            {
+                MessageBox.Show("Numarul de telefon trebuie sa contina doar cifre!");
+                return;
+            }
             if (telefon.Length < 10)
             {
                 MessageBox.Show("Numarul de telefon trebuie sa fie format din 10 cifre!");
@@ -113,6 +118,21 @@ namespace PSI2
                 MessageBox.Show("Nu ati completat starea civila!");
                 return;
             }
+            if(!IsNumber(txtNumar.Text))
+            {
+                MessageBox.Show("Campul numar trebuie sa contina doar cifre!");
+                return;
+            }
+            if(String.IsNullOrEmpty(txtCNP.Text))
+            {
+                MessageBox.Show("Nu ati completat CNP-ul!");
+                return;
+            }
+            if(!IsNumber(txtCNP.Text))
+            {
+                MessageBox.Show("Campul CNP trebuie sa contina doar cifre!");
+                return;
+            }
 
             patientModel.FirstName = txtPrenume.Text;
             patientModel.LastName = txtNume.Text;
@@ -126,7 +146,7 @@ namespace PSI2
             patientModel.Numar = txtNumar.Text;
             patientModel.Cetatenie = txtCetatenie.Text;
             patientModel.StareCivila = txtStareCivila.Text;
-            if(await _patientServices.AddPatient(patientModel))
+            if (await _patientServices.AddPatient(patientModel))
             {
                 MessageBox.Show("Pacient adaugat cu success!");
                 LogModel lm = new LogModel();
@@ -164,6 +184,22 @@ namespace PSI2
         {
             AddToDb();
 
+        }
+
+        private void txtNumar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AdaugaPacient_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public bool IsNumber(string t)
+        {
+            bool isNumber = double.TryParse(t, out double result);
+            return isNumber;
         }
     }
 }

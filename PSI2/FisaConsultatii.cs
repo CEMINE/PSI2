@@ -174,5 +174,10 @@ namespace PSI2
             Meniu meniu = new Meniu();
             meniu.Show();
         }
+        public bool IsNumber(string t)
+        {
+            bool isNumber = double.TryParse(t, out double result);
+            return isNumber;
+        }
     }
 }
