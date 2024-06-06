@@ -38,7 +38,7 @@ namespace PSI2
             _context = new AppDbContext(optionsBuilder.Options);
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(txtUsername.Text) && !String.IsNullOrEmpty(txtPassword.Text))
             {
@@ -58,6 +58,7 @@ namespace PSI2
                     lm.Username = user.Username;
                     lm.OperationDate = DateTime.Now;
                     lm.OperationDescription = $"Utilizatorul {user.Username} / id: {user.DoctorID} s-a conectat!";
+                    await _logger.Log(lm);
                     this.Hide();
                     Meniu m = new Meniu();
                     m.Show();

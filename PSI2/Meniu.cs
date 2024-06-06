@@ -152,7 +152,7 @@ namespace PSI2
             var d = _fcServices.GetAllFiseConsultatii().Where(x => x.PatientID == selectedPatientId).ToList();
             var f = _retetaServices.GetAllReteteMedicala().Where(x => x.PatientID == selectedPatientId).ToList();
 
-            if(a != null && b != null && c != null && d != null && f != null)
+            if (a != null && b != null && c != null && d != null && f != null)
             {
                 docsList = (a ?? Enumerable.Empty<IDocument>())
                 .Concat(b ?? Enumerable.Empty<IDocument>())
@@ -268,6 +268,15 @@ namespace PSI2
             lm.Username = doctor.Username;
             lm.OperationDate = DateTime.Now;
             lm.OperationDescription = $"Utilizatorul {doctor.Username} / id {doctor.DoctorID} s-a delogat!";
+            this.Hide();
+            Form1 f1 = new Form1();
+            f1.Show();
+        }
+
+        private void btnJurnal_Click(object sender, EventArgs e)
+        {
+            JurnalActivitati j = new JurnalActivitati();
+            j.Show();
         }
     }
 }

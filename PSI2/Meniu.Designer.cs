@@ -40,11 +40,13 @@
             btnAdaugFisaConsultatii = new Button();
             btnAdaugaReteta = new Button();
             btnDelogare = new Button();
+            btnJurnal = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // btnAdaugaPacient
             // 
-            btnAdaugaPacient.Location = new Point(642, 10);
+            btnAdaugaPacient.Location = new Point(441, 14);
             btnAdaugaPacient.Name = "btnAdaugaPacient";
             btnAdaugaPacient.Size = new Size(149, 30);
             btnAdaugaPacient.TabIndex = 1;
@@ -81,7 +83,7 @@
             // 
             // btnAdaugaAdeverinta
             // 
-            btnAdaugaAdeverinta.Location = new Point(642, 51);
+            btnAdaugaAdeverinta.Location = new Point(441, 55);
             btnAdaugaAdeverinta.Name = "btnAdaugaAdeverinta";
             btnAdaugaAdeverinta.Size = new Size(149, 30);
             btnAdaugaAdeverinta.TabIndex = 10;
@@ -91,7 +93,7 @@
             // 
             // btnAdaugaBilet
             // 
-            btnAdaugaBilet.Location = new Point(642, 92);
+            btnAdaugaBilet.Location = new Point(441, 96);
             btnAdaugaBilet.Name = "btnAdaugaBilet";
             btnAdaugaBilet.Size = new Size(149, 30);
             btnAdaugaBilet.TabIndex = 10;
@@ -105,13 +107,13 @@
             listBox2.ItemHeight = 15;
             listBox2.Location = new Point(245, 66);
             listBox2.Name = "listBox2";
-            listBox2.Size = new Size(133, 244);
+            listBox2.Size = new Size(149, 244);
             listBox2.TabIndex = 7;
             listBox2.SelectedIndexChanged += listBox2_SelectedIndexChanged;
             // 
             // btnVizualizareDocument
             // 
-            btnVizualizareDocument.Location = new Point(491, 10);
+            btnVizualizareDocument.Location = new Point(245, 316);
             btnVizualizareDocument.Name = "btnVizualizareDocument";
             btnVizualizareDocument.Size = new Size(149, 30);
             btnVizualizareDocument.TabIndex = 1;
@@ -121,7 +123,7 @@
             // 
             // btnAdaugaConcediuMedical
             // 
-            btnAdaugaConcediuMedical.Location = new Point(642, 133);
+            btnAdaugaConcediuMedical.Location = new Point(441, 137);
             btnAdaugaConcediuMedical.Name = "btnAdaugaConcediuMedical";
             btnAdaugaConcediuMedical.Size = new Size(149, 30);
             btnAdaugaConcediuMedical.TabIndex = 11;
@@ -131,7 +133,7 @@
             // 
             // btnAdaugFisaConsultatii
             // 
-            btnAdaugFisaConsultatii.Location = new Point(642, 174);
+            btnAdaugFisaConsultatii.Location = new Point(441, 178);
             btnAdaugFisaConsultatii.Name = "btnAdaugFisaConsultatii";
             btnAdaugFisaConsultatii.Size = new Size(149, 30);
             btnAdaugFisaConsultatii.TabIndex = 12;
@@ -141,7 +143,7 @@
             // 
             // btnAdaugaReteta
             // 
-            btnAdaugaReteta.Location = new Point(642, 210);
+            btnAdaugaReteta.Location = new Point(441, 214);
             btnAdaugaReteta.Name = "btnAdaugaReteta";
             btnAdaugaReteta.Size = new Size(149, 30);
             btnAdaugaReteta.TabIndex = 12;
@@ -151,7 +153,7 @@
             // 
             // btnDelogare
             // 
-            btnDelogare.Location = new Point(642, 408);
+            btnDelogare.Location = new Point(444, 408);
             btnDelogare.Name = "btnDelogare";
             btnDelogare.Size = new Size(146, 30);
             btnDelogare.TabIndex = 13;
@@ -159,11 +161,32 @@
             btnDelogare.UseVisualStyleBackColor = true;
             btnDelogare.Click += button1_Click;
             // 
+            // btnJurnal
+            // 
+            btnJurnal.Location = new Point(281, 408);
+            btnJurnal.Name = "btnJurnal";
+            btnJurnal.Size = new Size(146, 30);
+            btnJurnal.TabIndex = 13;
+            btnJurnal.Text = "Vezi jurnal operatiuni";
+            btnJurnal.UseVisualStyleBackColor = true;
+            btnJurnal.Click += btnJurnal_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(250, 41);
+            label1.Name = "label1";
+            label1.Size = new Size(145, 15);
+            label1.TabIndex = 14;
+            label1.Text = "Istoric documente pacient";
+            // 
             // Meniu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(597, 450);
+            Controls.Add(label1);
+            Controls.Add(btnJurnal);
             Controls.Add(btnDelogare);
             Controls.Add(btnAdaugaReteta);
             Controls.Add(btnAdaugFisaConsultatii);
@@ -196,5 +219,7 @@
         private Button btnAdaugFisaConsultatii;
         private Button btnAdaugaReteta;
         private Button btnDelogare;
+        private Button btnJurnal;
+        private Label label1;
     }
 }

@@ -46,5 +46,25 @@ namespace PSI2.Services
                 return false;
             }
         }
+
+        public List<LogModel> GetAllLogs()
+        {
+            try
+            {
+                using (var context = new AppDbContext(_contextOptions))
+                {
+                    return context.Logbook.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Exista o eroare la preluarea log-urilor! \n Eroarea: " + ex.Message);
+                if (ex.InnerException != null)
+                {
+                    Debug.WriteLine($"Inner Exception: {ex.InnerException.Message}");
+                }
+                return null;
+            }
+        }
     }
 }
