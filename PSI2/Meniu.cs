@@ -18,11 +18,13 @@ namespace PSI2
     {
         IEnumerable<PatientModel> patientList;
         IEnumerable<IDocument> docsList;
-        PatientServices _patientServices = new PatientServices();
-        BiletTrimitereServices _btServices = new BiletTrimitereServices();
-        MedicalCertificateServices _medicalCertificateServices = new MedicalCertificateServices();
-        ConcediuMedicalServices _concediuMedicalServices = new ConcediuMedicalServices();
-        FisaConsultatiiServices _fcServices = new FisaConsultatiiServices();
+        private PatientServices _patientServices = new PatientServices();
+        private DoctorServices _doctorServices = new DoctorServices();
+        private BiletTrimitereServices _btServices = new BiletTrimitereServices();
+        private MedicalCertificateServices _medicalCertificateServices = new MedicalCertificateServices();
+        private ConcediuMedicalServices _concediuMedicalServices = new ConcediuMedicalServices();
+        private FisaConsultatiiServices _fcServices = new FisaConsultatiiServices();
+        private RetetaMedicalaServices _retetaServices = new RetetaMedicalaServices();
         int selectedPatientId = 0;
         int selectedDocumentId = 0;
 
@@ -148,8 +150,16 @@ namespace PSI2
             var b = _medicalCertificateServices.GetAllMedicalCertificates().Where(x => x.PatientID == selectedPatientId).ToList();
             var c = _concediuMedicalServices.GetAllConcediiMedicale().Where(x => x.PatientID == selectedPatientId).ToList();
             var d = _fcServices.GetAllFiseConsultatii().Where(x => x.PatientID == selectedPatientId).ToList();
+            var f = _retetaServices.GetAllReteteMedicala().Where(x => x.PatientID == selectedPatientId).ToList();
 
-            docsList = (a ?? Enumerable.Empty<IDocument>()).Concat(b ?? Enumerable.Empty<IDocument>()).Concat(c ?? Enumerable.Empty<IDocument>()).Concat(d ?? Enumerable.Empty<IDocument>());
+            if(a != null && b != null && c != null && d != null && f != null)
+            {
+                docsList = (a ?? Enumerable.Empty<IDocument>())
+                .Concat(b ?? Enumerable.Empty<IDocument>())
+                .Concat(c ?? Enumerable.Empty<IDocument>())
+                .Concat(d ?? Enumerable.Empty<IDocument>())
+                .Concat(f ?? Enumerable.Empty<IDocument>());
+            }
 
 
             PopulateDocumentListBox();
@@ -215,11 +225,17 @@ namespace PSI2
                 cm.Show();
                 cm.IncarcaDate();
             }
-            if(DocumentVizualizare.DocType.Contains("FisaConsultatii"))
+            if (DocumentVizualizare.DocType.Contains("FisaConsultatii"))
             {
                 FisaConsultatii fcm = new FisaConsultatii();
                 fcm.Show();
                 fcm.IncarcaDate();
+            }
+            if (DocumentVizualizare.DocType.Contains("RetetaMedicala"))
+            {
+                RetetaMedicala rm = new RetetaMedicala();
+                rm.Show();
+                rm.IncarcaDate();
             }
         }
 
@@ -235,6 +251,23 @@ namespace PSI2
             this.Hide();
             FisaConsultatii fisaConsultatii = new FisaConsultatii();
             fisaConsultatii.Show();
+        }
+
+        private void btnAdaugaReteta_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RetetaMedicala rm = new RetetaMedicala();
+            rm.Show();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LogModel lm = new LogModel();
+            DoctorModel doctor = _doctorServices.GetAllDoctors().Where(x => x.DoctorID == Form1.User.UserID).First();
+            lm.Username = doctor.Username;
+            lm.OperationDate = DateTime.Now;
+            lm.OperationDescription = $"Utilizatorul {doctor.Username} / id {doctor.DoctorID} s-a delogat!";
         }
     }
 }

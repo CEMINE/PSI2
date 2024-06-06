@@ -15,4 +15,5 @@ public class AppDbContext : DbContext
     public DbSet<BiletTrimitereModel> BiletTrimitere { get; set; }
     public DbSet<ConcediuMedicalModel> ConcediuMedical { get; set; }
     public DbSet<FisaConsultatiiModel> FisaConsultatii { get; set; }
+    public DbSet<RetetaMedicalaModel> RetetaMedicala { get; set; }
 }

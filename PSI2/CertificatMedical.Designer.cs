@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnMeniu = new Button();
             btnSalveaza = new Button();
             label1 = new Label();
             dateTimePicker1 = new DateTimePicker();
@@ -65,7 +66,6 @@
             label10 = new Label();
             label3 = new Label();
             label2 = new Label();
-            btnMeniu = new Button();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -114,6 +114,16 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
+            // btnMeniu
+            // 
+            btnMeniu.Location = new Point(381, 746);
+            btnMeniu.Name = "btnMeniu";
+            btnMeniu.Size = new Size(142, 23);
+            btnMeniu.TabIndex = 1;
+            btnMeniu.Text = "< Inapoi la meniu";
+            btnMeniu.UseVisualStyleBackColor = true;
+            btnMeniu.Click += btnMeniu_Click;
+            // 
             // btnSalveaza
             // 
             btnSalveaza.Location = new Point(229, 747);
@@ -122,6 +132,7 @@
             btnSalveaza.TabIndex = 1;
             btnSalveaza.Text = "Salveaza si inchide";
             btnSalveaza.UseVisualStyleBackColor = true;
+            btnSalveaza.Click += btnSalveaza_Click;
             // 
             // label1
             // 
@@ -418,16 +429,6 @@
             label2.Size = new Size(95, 15);
             label2.TabIndex = 68;
             label2.Text = "Unitatea sanitara";
-            // 
-            // btnMeniu
-            // 
-            btnMeniu.Location = new Point(381, 746);
-            btnMeniu.Name = "btnMeniu";
-            btnMeniu.Size = new Size(142, 23);
-            btnMeniu.TabIndex = 1;
-            btnMeniu.Text = "< Inapoi la meniu";
-            btnMeniu.UseVisualStyleBackColor = true;
-            btnMeniu.Click += btnMeniu_Click;
             // 
             // CertificatMedical
             // 

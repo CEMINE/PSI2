@@ -116,6 +116,9 @@ namespace PSI2
                 lm.OperationDescription = $"Adeverinta medicala creata pentru {patient.LastName} {patient.FirstName}.";
                 lm.OperationDate = DateTime.Now;
                 await _logger.Log(lm);
+                this.Hide();
+                Meniu m = new Meniu();
+                m.Show();
             }
             else
             {

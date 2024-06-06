@@ -119,6 +119,9 @@ namespace PSI2
                 lm.Username = _doctorServices.GetAllDoctors().Where(x => x.DoctorID == Form1.User.UserID).First().Username;
                 lm.OperationDescription = $"Utilizatorul a adaugat un bilet de trimitere pentru pacientul {patient.LastName} {patient.FirstName}";
                 await _logger.Log(lm);
+                this.Hide();
+                Meniu m = new Meniu();
+                m.Show();
                 return;
             }
             else

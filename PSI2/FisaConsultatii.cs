@@ -141,6 +141,9 @@ namespace PSI2
                 lm.Username = doctor.Username;
                 lm.OperationDescription = $"Utilizatorul a adaugat o fisa de consultatii pentru pacientul {patient.LastName} {patient.FirstName}";
                 await _logger.Log(lm);
+                this.Hide();
+                Meniu m = new Meniu();
+                m.Show();
             }
             else
             {

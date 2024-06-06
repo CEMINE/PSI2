@@ -38,6 +38,8 @@
             btnVizualizareDocument = new Button();
             btnAdaugaConcediuMedical = new Button();
             btnAdaugFisaConsultatii = new Button();
+            btnAdaugaReteta = new Button();
+            btnDelogare = new Button();
             SuspendLayout();
             // 
             // btnAdaugaPacient
@@ -137,11 +139,33 @@
             btnAdaugFisaConsultatii.UseVisualStyleBackColor = true;
             btnAdaugFisaConsultatii.Click += btnAdaugFisaConsultatii_Click;
             // 
+            // btnAdaugaReteta
+            // 
+            btnAdaugaReteta.Location = new Point(642, 210);
+            btnAdaugaReteta.Name = "btnAdaugaReteta";
+            btnAdaugaReteta.Size = new Size(149, 30);
+            btnAdaugaReteta.TabIndex = 12;
+            btnAdaugaReteta.Text = "Adauga Reteta Medicala";
+            btnAdaugaReteta.UseVisualStyleBackColor = true;
+            btnAdaugaReteta.Click += btnAdaugaReteta_Click;
+            // 
+            // btnDelogare
+            // 
+            btnDelogare.Location = new Point(642, 408);
+            btnDelogare.Name = "btnDelogare";
+            btnDelogare.Size = new Size(146, 30);
+            btnDelogare.TabIndex = 13;
+            btnDelogare.Text = "Delogare";
+            btnDelogare.UseVisualStyleBackColor = true;
+            btnDelogare.Click += button1_Click;
+            // 
             // Meniu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnDelogare);
+            Controls.Add(btnAdaugaReteta);
             Controls.Add(btnAdaugFisaConsultatii);
             Controls.Add(btnAdaugaConcediuMedical);
             Controls.Add(btnAdaugaBilet);
@@ -170,5 +194,7 @@
         private Button btnVizualizareDocument;
         private Button btnAdaugaConcediuMedical;
         private Button btnAdaugFisaConsultatii;
+        private Button btnAdaugaReteta;
+        private Button btnDelogare;
     }
 }

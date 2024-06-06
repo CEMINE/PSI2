@@ -175,6 +175,10 @@ namespace PSI2
                 lm.Username = doctor.Username;
                 lm.OperationDate = DateTime.Now;
                 lm.OperationDescription = $"Utilizatorul a adaugat concediul medical pentru {patient.LastName} {patient.FirstName}";
+                await _logger.Log(lm);
+                this.Hide();
+                Meniu m = new Meniu();
+                m.Show();
             }
             else
             {

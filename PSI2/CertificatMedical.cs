@@ -33,5 +33,10 @@ namespace PSI2
             Meniu meniu = new Meniu();
             meniu.Show();
         }
+
+        private void btnSalveaza_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

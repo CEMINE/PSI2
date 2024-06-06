@@ -14,8 +14,11 @@ namespace PSI2
         string username;
         string password;
         IEnumerable<DoctorModel> doctorList;
-        DoctorServices _doctorServices = new DoctorServices();
+        LogModel lm = new LogModel();
+        private DoctorServices _doctorServices = new DoctorServices();
+        private Logger _logger = new Logger();
         private AppDbContext _context;
+
 
         public static class User
         {
@@ -52,6 +55,9 @@ namespace PSI2
                 if (BCrypt.Net.BCrypt.EnhancedVerify(password, user.Password))
                 {
                     Debug.WriteLine($"e bun");
+                    lm.Username = user.Username;
+                    lm.OperationDate = DateTime.Now;
+                    lm.OperationDescription = $"Utilizatorul {user.Username} / id: {user.DoctorID} s-a conectat!";
                     this.Hide();
                     Meniu m = new Meniu();
                     m.Show();
