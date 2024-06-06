@@ -145,5 +145,12 @@ namespace PSI2
             txtSerie.Text = btVizualizare.Serie;
             txtNr.Text = btVizualizare.ID.ToString();
         }
+
+        private void btnMeniu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Meniu meniu = new Meniu();
+            meniu.Show();
+        }
     }
 }

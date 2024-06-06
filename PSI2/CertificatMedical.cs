@@ -26,5 +26,12 @@ namespace PSI2
         {
 
         }
+
+        private void btnMeniu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Meniu meniu = new Meniu();
+            meniu.Show();
+        }
     }
 }

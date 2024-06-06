@@ -37,13 +37,14 @@
             listBox2 = new ListBox();
             btnVizualizareDocument = new Button();
             btnAdaugaConcediuMedical = new Button();
+            btnAdaugFisaConsultatii = new Button();
             SuspendLayout();
             // 
             // btnAdaugaPacient
             // 
-            btnAdaugaPacient.Location = new Point(652, 10);
+            btnAdaugaPacient.Location = new Point(642, 10);
             btnAdaugaPacient.Name = "btnAdaugaPacient";
-            btnAdaugaPacient.Size = new Size(137, 23);
+            btnAdaugaPacient.Size = new Size(149, 30);
             btnAdaugaPacient.TabIndex = 1;
             btnAdaugaPacient.Text = "Adauga pacient";
             btnAdaugaPacient.UseVisualStyleBackColor = true;
@@ -78,9 +79,9 @@
             // 
             // btnAdaugaAdeverinta
             // 
-            btnAdaugaAdeverinta.Location = new Point(652, 49);
+            btnAdaugaAdeverinta.Location = new Point(642, 51);
             btnAdaugaAdeverinta.Name = "btnAdaugaAdeverinta";
-            btnAdaugaAdeverinta.Size = new Size(137, 23);
+            btnAdaugaAdeverinta.Size = new Size(149, 30);
             btnAdaugaAdeverinta.TabIndex = 10;
             btnAdaugaAdeverinta.Text = "Adauga adeverinta";
             btnAdaugaAdeverinta.UseVisualStyleBackColor = true;
@@ -88,9 +89,9 @@
             // 
             // btnAdaugaBilet
             // 
-            btnAdaugaBilet.Location = new Point(652, 89);
+            btnAdaugaBilet.Location = new Point(642, 92);
             btnAdaugaBilet.Name = "btnAdaugaBilet";
-            btnAdaugaBilet.Size = new Size(137, 23);
+            btnAdaugaBilet.Size = new Size(149, 30);
             btnAdaugaBilet.TabIndex = 10;
             btnAdaugaBilet.Text = "Adauga bilet trimitere";
             btnAdaugaBilet.UseVisualStyleBackColor = true;
@@ -108,9 +109,9 @@
             // 
             // btnVizualizareDocument
             // 
-            btnVizualizareDocument.Location = new Point(509, 10);
+            btnVizualizareDocument.Location = new Point(491, 10);
             btnVizualizareDocument.Name = "btnVizualizareDocument";
-            btnVizualizareDocument.Size = new Size(137, 23);
+            btnVizualizareDocument.Size = new Size(149, 30);
             btnVizualizareDocument.TabIndex = 1;
             btnVizualizareDocument.Text = "Vizualizare document";
             btnVizualizareDocument.UseVisualStyleBackColor = true;
@@ -118,19 +119,30 @@
             // 
             // btnAdaugaConcediuMedical
             // 
-            btnAdaugaConcediuMedical.Location = new Point(652, 130);
+            btnAdaugaConcediuMedical.Location = new Point(642, 133);
             btnAdaugaConcediuMedical.Name = "btnAdaugaConcediuMedical";
-            btnAdaugaConcediuMedical.Size = new Size(136, 23);
+            btnAdaugaConcediuMedical.Size = new Size(149, 30);
             btnAdaugaConcediuMedical.TabIndex = 11;
             btnAdaugaConcediuMedical.Text = "Adauga concediu medical";
             btnAdaugaConcediuMedical.UseVisualStyleBackColor = true;
             btnAdaugaConcediuMedical.Click += btnAdaugaConcediuMedical_Click;
+            // 
+            // btnAdaugFisaConsultatii
+            // 
+            btnAdaugFisaConsultatii.Location = new Point(642, 174);
+            btnAdaugFisaConsultatii.Name = "btnAdaugFisaConsultatii";
+            btnAdaugFisaConsultatii.Size = new Size(149, 30);
+            btnAdaugFisaConsultatii.TabIndex = 12;
+            btnAdaugFisaConsultatii.Text = "Adauga Fisa Consultatii";
+            btnAdaugFisaConsultatii.UseVisualStyleBackColor = true;
+            btnAdaugFisaConsultatii.Click += btnAdaugFisaConsultatii_Click;
             // 
             // Meniu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnAdaugFisaConsultatii);
             Controls.Add(btnAdaugaConcediuMedical);
             Controls.Add(btnAdaugaBilet);
             Controls.Add(btnAdaugaAdeverinta);
@@ -157,5 +169,6 @@
         private ListBox listBox2;
         private Button btnVizualizareDocument;
         private Button btnAdaugaConcediuMedical;
+        private Button btnAdaugFisaConsultatii;
     }
 }

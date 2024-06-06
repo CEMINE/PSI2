@@ -61,6 +61,7 @@
             label3 = new Label();
             label2 = new Label();
             btnCreeazaAdeverinta = new Button();
+            btnMeniu = new Button();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -369,7 +370,7 @@
             // 
             // btnCreeazaAdeverinta
             // 
-            btnCreeazaAdeverinta.Location = new Point(329, 514);
+            btnCreeazaAdeverinta.Location = new Point(262, 514);
             btnCreeazaAdeverinta.Name = "btnCreeazaAdeverinta";
             btnCreeazaAdeverinta.Size = new Size(140, 33);
             btnCreeazaAdeverinta.TabIndex = 1;
@@ -377,11 +378,22 @@
             btnCreeazaAdeverinta.UseVisualStyleBackColor = true;
             btnCreeazaAdeverinta.Click += btnCreeazaAdeverinta_Click;
             // 
+            // btnMeniu
+            // 
+            btnMeniu.Location = new Point(422, 514);
+            btnMeniu.Name = "btnMeniu";
+            btnMeniu.Size = new Size(140, 33);
+            btnMeniu.TabIndex = 1;
+            btnMeniu.Text = "< Inapoi la meniu";
+            btnMeniu.UseVisualStyleBackColor = true;
+            btnMeniu.Click += btnMeniu_Click;
+            // 
             // AdeverintaMedicala
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 559);
+            Controls.Add(btnMeniu);
             Controls.Add(btnCreeazaAdeverinta);
             Controls.Add(panel1);
             Name = "AdeverintaMedicala";
@@ -429,5 +441,6 @@
         private Button btnCreeazaAdeverinta;
         private Label Adresa;
         private DateTimePicker dtpDataNasterePacient;
+        private Button btnMeniu;
     }
 }

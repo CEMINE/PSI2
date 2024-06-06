@@ -250,6 +250,7 @@
             label149 = new Label();
             dtpDataPrimirii = new DateTimePicker();
             btnSalveaza = new Button();
+            btnMeniu = new Button();
             groupBox2.SuspendLayout();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
@@ -2344,7 +2345,7 @@
             // 
             // btnSalveaza
             // 
-            btnSalveaza.Location = new Point(394, 1105);
+            btnSalveaza.Location = new Point(360, 1105);
             btnSalveaza.Name = "btnSalveaza";
             btnSalveaza.Size = new Size(115, 23);
             btnSalveaza.TabIndex = 52;
@@ -2352,12 +2353,23 @@
             btnSalveaza.UseVisualStyleBackColor = true;
             btnSalveaza.Click += btnSalveaza_Click;
             // 
+            // btnMeniu
+            // 
+            btnMeniu.Location = new Point(486, 1105);
+            btnMeniu.Name = "btnMeniu";
+            btnMeniu.Size = new Size(115, 23);
+            btnMeniu.TabIndex = 52;
+            btnMeniu.Text = "< Inapoi la meniu";
+            btnMeniu.UseVisualStyleBackColor = true;
+            btnMeniu.Click += btnMeniu_Click;
+            // 
             // ConcediuMedical
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             ClientSize = new Size(938, 638);
+            Controls.Add(btnMeniu);
             Controls.Add(btnSalveaza);
             Controls.Add(dtpDataPrimirii);
             Controls.Add(panel5);
@@ -2674,5 +2686,6 @@
         private TextBox txtIndemnizatieFond;
         private TextBox txtIndemnizatieFNUASS;
         private TextBox txtIndemnizatieAngajator;
+        private Button btnMeniu;
     }
 }

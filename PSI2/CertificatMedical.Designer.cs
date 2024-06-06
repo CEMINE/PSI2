@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnSalveaza = new Button();
+            label1 = new Label();
+            dateTimePicker1 = new DateTimePicker();
             richTextBox1 = new RichTextBox();
             label28 = new Label();
             label26 = new Label();
@@ -62,9 +65,7 @@
             label10 = new Label();
             label3 = new Label();
             label2 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            label1 = new Label();
-            btnSalveaza = new Button();
+            btnMeniu = new Button();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -72,6 +73,7 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(btnMeniu);
             panel1.Controls.Add(btnSalveaza);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(dateTimePicker1);
@@ -111,6 +113,31 @@
             panel1.Size = new Size(776, 793);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // btnSalveaza
+            // 
+            btnSalveaza.Location = new Point(229, 747);
+            btnSalveaza.Name = "btnSalveaza";
+            btnSalveaza.Size = new Size(142, 23);
+            btnSalveaza.TabIndex = 1;
+            btnSalveaza.Text = "Salveaza si inchide";
+            btnSalveaza.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(152, 247);
+            label1.Name = "label1";
+            label1.Size = new Size(31, 15);
+            label1.TabIndex = 81;
+            label1.Text = "Data";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(211, 243);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(376, 23);
+            dateTimePicker1.TabIndex = 80;
             // 
             // richTextBox1
             // 
@@ -392,30 +419,15 @@
             label2.TabIndex = 68;
             label2.Text = "Unitatea sanitara";
             // 
-            // dateTimePicker1
+            // btnMeniu
             // 
-            dateTimePicker1.Location = new Point(211, 243);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(376, 23);
-            dateTimePicker1.TabIndex = 80;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(152, 247);
-            label1.Name = "label1";
-            label1.Size = new Size(31, 15);
-            label1.TabIndex = 81;
-            label1.Text = "Data";
-            // 
-            // btnSalveaza
-            // 
-            btnSalveaza.Location = new Point(332, 748);
-            btnSalveaza.Name = "btnSalveaza";
-            btnSalveaza.Size = new Size(75, 23);
-            btnSalveaza.TabIndex = 1;
-            btnSalveaza.Text = "Salveaza si inchide";
-            btnSalveaza.UseVisualStyleBackColor = true;
+            btnMeniu.Location = new Point(381, 746);
+            btnMeniu.Name = "btnMeniu";
+            btnMeniu.Size = new Size(142, 23);
+            btnMeniu.TabIndex = 1;
+            btnMeniu.Text = "< Inapoi la meniu";
+            btnMeniu.UseVisualStyleBackColor = true;
+            btnMeniu.Click += btnMeniu_Click;
             // 
             // CertificatMedical
             // 
@@ -472,5 +484,6 @@
         private Label label1;
         private DateTimePicker dateTimePicker1;
         private Button btnSalveaza;
+        private Button btnMeniu;
     }
 }

@@ -46,22 +46,22 @@ namespace PSI2
         private async void btnSalveaza_Click(object sender, EventArgs e)
         {
             ConcediuMedicalModel cm = new ConcediuMedicalModel();
-            if(String.IsNullOrEmpty(tipBoala))
+            if (String.IsNullOrEmpty(tipBoala))
             {
                 MessageBox.Show("Nu ati selectat tipul bolii!");
                 return;
             }
-            if(String.IsNullOrEmpty(procentPlata))
+            if (String.IsNullOrEmpty(procentPlata))
             {
                 MessageBox.Show("Nu ati selectat procentul de plata!");
                 return;
             }
-            if(String.IsNullOrEmpty(tipAsigurat))
+            if (String.IsNullOrEmpty(tipAsigurat))
             {
                 MessageBox.Show("Nu ati selectat tipul asigurarii pacientului!(asigurat/somer)");
                 return;
             }
-            if(String.IsNullOrEmpty(txtNrInreg.Text))
+            if (String.IsNullOrEmpty(txtNrInreg.Text))
             {
                 MessageBox.Show("Nu ati completat campul nr. inregistrare!");
                 return;
@@ -111,22 +111,22 @@ namespace PSI2
                 MessageBox.Show("Nu ati completat campul numar angajati!");
                 return;
             }
-            if(String.IsNullOrEmpty(txtIndemnizatieAngajator.Text))
+            if (String.IsNullOrEmpty(txtIndemnizatieAngajator.Text))
             {
                 MessageBox.Show("Nu ati completat campul indemnizatie suportata de angajator!");
                 return;
             }
-            if(String.IsNullOrEmpty(txtIndemnizatieFNUASS.Text))
+            if (String.IsNullOrEmpty(txtIndemnizatieFNUASS.Text))
             {
                 MessageBox.Show("Nu ati completat campul indemnizatie suportata din bugetul FNUASS!");
                 return;
             }
-            if(String.IsNullOrEmpty(txtIndemnizatieFond.Text))
+            if (String.IsNullOrEmpty(txtIndemnizatieFond.Text))
             {
                 MessageBox.Show("Nu ati completat campul indemnizatie suportata din fondul de asigurare!");
                 return;
             }
-            if(IsNumber(txtIndemnizatieAngajator.Text))
+            if (IsNumber(txtIndemnizatieAngajator.Text))
             {
                 MessageBox.Show("Indemnizatia suportata de catre angajator trebuie sa fie un numar!");
                 return;
@@ -169,7 +169,7 @@ namespace PSI2
             cm.DataPrimirii = dtpDataPrimirii.Value;
             cm.PatientID = patient.PatientID;
             cm.DoctorID = doctor.DoctorID;
-            if(await _concediuMedicalServices.AddConcediuMedical(cm))
+            if (await _concediuMedicalServices.AddConcediuMedical(cm))
             {
                 MessageBox.Show("Concediul medical a fost salvat cu succes!");
                 lm.Username = doctor.Username;
@@ -247,21 +247,21 @@ namespace PSI2
             dtpDataAcordarii.Value = cm.DataAcordarii;
             dtpDataInceput.Value = cm.DataInceput;
             dtpDataSfarsit.Value = cm.DataSfarsit;
-            if(cm.TipBoala == "acut")
+            if (cm.TipBoala == "acut")
             {
                 rbtCronic.Checked = false;
                 rbtSemiacut.Checked = false;
                 rbtAcut.Checked = true;
                 tipBoala = "acut";
             }
-            if(cm.TipBoala == "semiacut")
+            if (cm.TipBoala == "semiacut")
             {
                 rbtCronic.Checked = false;
                 rbtSemiacut.Checked = true;
                 rbtAcut.Checked = false;
                 tipBoala = "semiacut";
             }
-            if(cm.TipBoala == "cronic")
+            if (cm.TipBoala == "cronic")
             {
                 rbtCronic.Checked = true;
                 rbtSemiacut.Checked = false;
@@ -275,19 +275,19 @@ namespace PSI2
             txtSediu.Text = cm.SediuPlatitor;
             txtCUIPlatitor.Text = cm.CUIPlatitor;
             numNrAngajati.Value = cm.NrAngajati;
-            if(cm.TipAsigurat == "asigurat")
+            if (cm.TipAsigurat == "asigurat")
             {
                 rbtSomer.Checked = false;
                 rbtAsigurat.Checked = true;
                 tipAsigurat = "asigurat";
             }
-            if(cm.TipAsigurat == "somer")
+            if (cm.TipAsigurat == "somer")
             {
                 rbtSomer.Checked = true;
                 rbtAsigurat.Checked = false;
                 tipAsigurat = "somer";
             }
-            if(cm.ProcentPlata == "75")
+            if (cm.ProcentPlata == "75")
             {
                 rbt75.Checked = true;
                 rbt80.Checked = false;
@@ -343,6 +343,13 @@ namespace PSI2
         {
             bool isNumber = double.TryParse(t, out double result);
             return isNumber;
+        }
+
+        private void btnMeniu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Meniu meniu = new Meniu();
+            meniu.Show();
         }
     }
 }

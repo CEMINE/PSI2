@@ -76,27 +76,27 @@ namespace PSI2
 
         private async void btnCreeazaAdeverinta_Click(object sender, EventArgs e)
         {
-            
+
             recomandare = txtRecomandare.Text;
-            if(String.IsNullOrEmpty(recomandare))
+            if (String.IsNullOrEmpty(recomandare))
             {
                 MessageBox.Show("Nu ati introdus o recomandare!");
                 return;
             }
             boala = txtBoala.Text;
-            if(String.IsNullOrEmpty(boala))
+            if (String.IsNullOrEmpty(boala))
             {
                 MessageBox.Show("Nu ati introdus boala de care sufera pacientul!");
                 return;
             }
             motiv = txtMotivEliberare.Text;
-            if(String.IsNullOrEmpty(motiv))
+            if (String.IsNullOrEmpty(motiv))
             {
                 MessageBox.Show("Nu ati introdus motivul eliberarii!");
                 return;
             }
             dataEliberare = dtpDataEliberarii.Value;
-            if(!dataEliberare.HasValue)
+            if (!dataEliberare.HasValue)
             {
                 MessageBox.Show("Nu ati selectat data eliberarii!");
                 return;
@@ -121,8 +121,8 @@ namespace PSI2
             {
                 MessageBox.Show("A aparut o eroare in momentul salvarii adeverintei medicale!");
             }
-            
-            
+
+
         }
 
         public void IncarcareDate()
@@ -134,6 +134,13 @@ namespace PSI2
             txtMotivEliberare.Text = adv.MotivulEliberarii;
             dtpDataEliberarii.Value = adv.DataEliberarii;
             txtNrFisa.Text = adv.ID.ToString();
+        }
+
+        private void btnMeniu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Meniu meniu = new Meniu();
+            meniu.Show();
         }
     }
 }

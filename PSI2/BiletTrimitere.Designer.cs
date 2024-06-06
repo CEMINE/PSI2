@@ -79,6 +79,7 @@
             label48 = new Label();
             label49 = new Label();
             btnSalveaza = new Button();
+            btnMeniu = new Button();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -556,7 +557,7 @@
             // 
             // btnSalveaza
             // 
-            btnSalveaza.Location = new Point(327, 775);
+            btnSalveaza.Location = new Point(287, 775);
             btnSalveaza.Name = "btnSalveaza";
             btnSalveaza.Size = new Size(161, 33);
             btnSalveaza.TabIndex = 1;
@@ -564,11 +565,22 @@
             btnSalveaza.UseVisualStyleBackColor = true;
             btnSalveaza.Click += btnSalveaza_Click;
             // 
+            // btnMeniu
+            // 
+            btnMeniu.Location = new Point(465, 775);
+            btnMeniu.Name = "btnMeniu";
+            btnMeniu.Size = new Size(161, 33);
+            btnMeniu.TabIndex = 1;
+            btnMeniu.Text = "< Inapoi la meniu";
+            btnMeniu.UseVisualStyleBackColor = true;
+            btnMeniu.Click += btnMeniu_Click;
+            // 
             // BiletTrimitere
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(889, 811);
+            Controls.Add(btnMeniu);
             Controls.Add(btnSalveaza);
             Controls.Add(panel1);
             Name = "BiletTrimitere";
@@ -634,5 +646,6 @@
         private Label label48;
         private Label label49;
         private Button btnSalveaza;
+        private Button btnMeniu;
     }
 }

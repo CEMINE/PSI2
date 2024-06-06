@@ -22,6 +22,7 @@ namespace PSI2
         BiletTrimitereServices _btServices = new BiletTrimitereServices();
         MedicalCertificateServices _medicalCertificateServices = new MedicalCertificateServices();
         ConcediuMedicalServices _concediuMedicalServices = new ConcediuMedicalServices();
+        FisaConsultatiiServices _fcServices = new FisaConsultatiiServices();
         int selectedPatientId = 0;
         int selectedDocumentId = 0;
 
@@ -146,8 +147,9 @@ namespace PSI2
             var a = _btServices.GetAllBileteTrimitere().Where(x => x.PatientID == selectedPatientId).ToList();
             var b = _medicalCertificateServices.GetAllMedicalCertificates().Where(x => x.PatientID == selectedPatientId).ToList();
             var c = _concediuMedicalServices.GetAllConcediiMedicale().Where(x => x.PatientID == selectedPatientId).ToList();
+            var d = _fcServices.GetAllFiseConsultatii().Where(x => x.PatientID == selectedPatientId).ToList();
 
-            docsList = (a ?? Enumerable.Empty<IDocument>()).Concat(b ?? Enumerable.Empty<IDocument>()).Concat(c ?? Enumerable.Empty<IDocument>());
+            docsList = (a ?? Enumerable.Empty<IDocument>()).Concat(b ?? Enumerable.Empty<IDocument>()).Concat(c ?? Enumerable.Empty<IDocument>()).Concat(d ?? Enumerable.Empty<IDocument>());
 
 
             PopulateDocumentListBox();
@@ -207,11 +209,17 @@ namespace PSI2
                 a.Show();
                 a.IncarcareDate();
             }
-            if(DocumentVizualizare.DocType.Contains("ConcediuMedical"))
+            if (DocumentVizualizare.DocType.Contains("ConcediuMedical"))
             {
                 ConcediuMedical cm = new ConcediuMedical();
                 cm.Show();
                 cm.IncarcaDate();
+            }
+            if(DocumentVizualizare.DocType.Contains("FisaConsultatii"))
+            {
+                FisaConsultatii fcm = new FisaConsultatii();
+                fcm.Show();
+                fcm.IncarcaDate();
             }
         }
 
@@ -220,6 +228,13 @@ namespace PSI2
             this.Hide();
             ConcediuMedical cm = new ConcediuMedical();
             cm.Show();
+        }
+
+        private void btnAdaugFisaConsultatii_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FisaConsultatii fisaConsultatii = new FisaConsultatii();
+            fisaConsultatii.Show();
         }
     }
 }
